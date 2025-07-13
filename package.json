@@ -1,0 +1,10 @@
+{
+  "name": "plant-blog",
+  "description": "A blog about plants built with Tailwind CSS",
+  "scripts": {
+    "start": "npx http-server ."
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
