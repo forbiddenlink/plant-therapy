@@ -1,10 +1,38 @@
 {
-  "name": "plant-blog",
-  "description": "A blog about plants built with Tailwind CSS",
+  "name": "plant-therapy",
+  "version": "1.0.0",
+  "description": "A responsive wellness blog about plant care and mental health, built with Tailwind CSS. Features dark mode, form validation, smooth animations, and full accessibility support.",
+  "keywords": [
+    "tailwind-css",
+    "responsive-design",
+    "dark-mode",
+    "wellness",
+    "plant-care",
+    "mental-health",
+    "portfolio-project",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Plant Therapy",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/plant-therapy#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/plant-therapy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/plant-therapy/issues"
+  },
   "scripts": {
-    "start": "npx http-server ."
+    "start": "npx http-server . -o",
+    "serve": "npx http-server . -p 3000",
+    "preview": "npx http-server . -o -c-1"
   },
   "dependencies": {
     "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
