@@ -241,6 +241,44 @@
 
             /* Smooth anchor scrolling */
             html { scroll-behavior: smooth; }
+
+            /* Click to Tweet */
+            .click-to-tweet {
+                position: relative;
+                padding: 1.5rem 2rem;
+                margin: 2rem 0;
+                background: linear-gradient(135deg, #f8f6f3 0%, #e8f0eb 100%);
+                border-radius: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .click-to-tweet:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(45, 90, 61, 0.12);
+            }
+            .click-to-tweet blockquote {
+                margin: 0;
+                padding: 0;
+                background: none;
+                border: none;
+                font-size: 1.1rem;
+            }
+            .click-to-tweet blockquote::before { display: none; }
+            .click-to-tweet .tweet-action {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-top: 1rem;
+                font-size: 0.8rem;
+                font-family: system-ui, sans-serif;
+                color: #2d5a3d;
+                font-weight: 500;
+            }
+            .click-to-tweet .tweet-action svg { width: 16px; height: 16px; }
+            .dark .click-to-tweet {
+                background: linear-gradient(135deg, #1f2937 0%, #1e3a2b 100%);
+            }
+            .dark .click-to-tweet .tweet-action { color: #34d399; }
         </style>
     </head>
     <body class="bg-surface dark:bg-gray-950 font-body antialiased transition-colors duration-300">
@@ -344,9 +382,15 @@
                         The mechanism appears to involve the parasympathetic nervous system. When we engage with plants - touching soil, pruning leaves, or simply observing growth - our vagus nerve activates, triggering the "rest and digest" response. Heart rate variability increases, blood pressure decreases, and the body shifts from a sympathetic (fight-or-flight) to a parasympathetic state.
                     </p>
 
-                    <blockquote class="text-xl text-primary dark:text-gray-200">
-                        "What we're seeing is that plants provide a kind of neurological anchor - a consistent, non-threatening presence that helps regulate the stress response system."
-                    </blockquote>
+                    <div class="click-to-tweet" onclick="tweetQuote(this)">
+                        <blockquote class="text-xl text-primary dark:text-gray-200">
+                            "What we're seeing is that plants provide a kind of neurological anchor - a consistent, non-threatening presence that helps regulate the stress response system."
+                        </blockquote>
+                        <span class="tweet-action">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Click to tweet
+                        </span>
+                    </div>
 
                     <h2 id="neuroplasticity" class="text-2xl font-semibold text-primary dark:text-white">Neuroplasticity and Long-Term Changes</h2>
                     <p>
@@ -542,6 +586,13 @@
                         svg.querySelector('path').setAttribute('d', 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1');
                     }, 2000);
                 });
+            }
+
+            function tweetQuote(el) {
+                const quote = el.querySelector('blockquote').textContent.trim();
+                const url = encodeURIComponent(window.location.href);
+                const text = encodeURIComponent(quote + ' via @PlantTherapyBlog');
+                window.open('https://twitter.com/intent/tweet?url=' + url + '&text=' + text, '_blank', 'width=550,height=420');
             }
         </script>
     </body>
