@@ -10,6 +10,30 @@
         <meta property="og:title" content="Morning Rituals: A Neuroscientist's Guide to Plant-Based Mindfulness">
         <meta property="og:image" content="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200">
 
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Morning Rituals: A Neuroscientist's Guide to Plant-Based Mindfulness",
+            "description": "How a 10-minute morning routine with your plants can set your circadian rhythm and reduce cortisol levels throughout the day.",
+            "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=1200",
+            "datePublished": "2026-02-06",
+            "dateModified": "2026-02-06",
+            "author": {
+                "@type": "Person",
+                "name": "Dr. Taylor Morgan"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Plant Therapy",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://plant-therapy.com/favicon.svg"
+                }
+            }
+        }
+        </script>
+
         <link rel="icon" type="image/svg+xml" href="../favicon.svg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,9 +65,11 @@
             .prose ul, .prose ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
             .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
             .prose blockquote { border-left: 3px solid #2d5a3d; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; }
+            .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #2d5a3d, #3d7a52); z-index: 100; transition: width 0.1s ease-out; }
         </style>
     </head>
     <body class="bg-surface dark:bg-gray-950 font-sans antialiased transition-colors duration-300">
+        <div class="progress-bar" id="progressBar"></div>
         <header class="bg-surface/80 dark:bg-gray-950/80 backdrop-blur-md fixed w-full top-0 z-50 border-b border-gray-100 dark:border-gray-800">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
@@ -230,6 +256,15 @@
             darkModeToggle.addEventListener('click', () => {
                 html.classList.toggle('dark');
                 localStorage.setItem('darkMode', html.classList.contains('dark'));
+            });
+
+            // Reading Progress Bar
+            const progressBar = document.getElementById('progressBar');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + '%';
             });
         </script>
     </body>

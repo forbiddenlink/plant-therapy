@@ -10,6 +10,30 @@
         <meta property="og:title" content="2025 Meta-Analysis: Plant Therapy Outcomes in Clinical Settings">
         <meta property="og:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200">
 
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "2025 Meta-Analysis: Plant Therapy Outcomes in Clinical Settings",
+            "description": "Comprehensive review of 156 studies examining horticultural therapy effectiveness across mental health conditions.",
+            "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200",
+            "datePublished": "2026-02-06",
+            "dateModified": "2026-02-06",
+            "author": {
+                "@type": "Person",
+                "name": "Plant Therapy Research Team"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Plant Therapy",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://plant-therapy.com/favicon.svg"
+                }
+            }
+        }
+        </script>
+
         <link rel="icon" type="image/svg+xml" href="../favicon.svg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,9 +70,11 @@
             .data-table th, .data-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
             .dark .data-table th, .dark .data-table td { border-color: #374151; }
             .data-table th { font-weight: 600; }
+            .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #2d5a3d, #3d7a52); z-index: 100; transition: width 0.1s ease-out; }
         </style>
     </head>
     <body class="bg-surface dark:bg-gray-950 font-sans antialiased transition-colors duration-300">
+        <div class="progress-bar" id="progressBar"></div>
         <header class="bg-surface/80 dark:bg-gray-950/80 backdrop-blur-md fixed w-full top-0 z-50 border-b border-gray-100 dark:border-gray-800">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
@@ -338,6 +364,15 @@
             darkModeToggle.addEventListener('click', () => {
                 html.classList.toggle('dark');
                 localStorage.setItem('darkMode', html.classList.contains('dark'));
+            });
+
+            // Reading Progress Bar
+            const progressBar = document.getElementById('progressBar');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + '%';
             });
         </script>
     </body>
