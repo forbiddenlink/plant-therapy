@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dr. Sarah Chen, PhD - Neuroscientist | Plant Therapy</title>
+        <meta name="description" content="Dr. Sarah Chen is a neuroscientist at Stanford University specializing in the effects of plant interaction on brain structure and function.">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="profile">
+        <meta property="og:title" content="Dr. Sarah Chen, PhD - Neuroscientist">
+        <meta property="og:description" content="Stanford neuroscientist researching plant-human interaction and neural plasticity.">
+        <meta property="og:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Dr. Sarah Chen",
+            "jobTitle": "Neuroscientist",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Stanford University"
+            },
+            "description": "Neuroscientist specializing in the effects of plant interaction on brain structure and function",
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
+        }
+        </script>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#1a1a1a',
+                            secondary: '#525252',
+                            accent: '#2d5a3d',
+                            'accent-light': '#e8f0eb',
+                            surface: '#fafafa',
+                            cream: '#f8f6f3',
+                            sage: '#9caf88',
+                            moss: '#4a5d3c',
+                            botanical: '#1e3a2b',
+                        },
+                        fontFamily: {
+                            display: ['Fraunces', 'Georgia', 'serif'],
+                            body: ['Source Serif 4', 'Georgia', 'serif'],
+                            sans: ['system-ui', '-apple-system', 'sans-serif'],
+                        },
+                    },
+                },
+            }
+        </script>
+        <style>
+            .card-lift {
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .card-lift:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body class="bg-surface dark:bg-gray-950 font-body antialiased transition-colors duration-300">
+        <!-- Header -->
+        <header class="bg-surface/80 dark:bg-gray-950/80 backdrop-blur-md fixed w-full top-0 z-50 border-b border-gray-100 dark:border-gray-800">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <a href="../index.html" class="flex items-center gap-3 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.56 162.44" class="w-8 h-8 text-accent dark:text-emerald-400" fill="currentColor"><path d="M88.94 119.91v42.53H75.4V92.17c-26.58.24-47.78-9.8-62.83-31.49C.01 42.59-.81 21.91.41.47 20.12-.94 39.07.28 56.17 11.7c16.82 11.23 26.68 27.1 31.55 47.46 10.5-14.19 22.98-24.84 39.54-28.46 11.82-2.59 24.14-2.93 36.15-4.26 6.86 44.12-17.09 92.51-74.47 93.48zM14.33 14.31C12.4 48.23 36.69 81.49 75.09 77.17c1.17-36.65-25.68-64.07-60.76-62.86zm75.07 90.8c37.04.92 61.67-25.55 60.93-63.1-32.53-4.75-62.82 26.43-60.93 63.1z"/></svg>
+                        <span class="text-lg font-semibold text-primary dark:text-white">Plant Therapy</span>
+                    </a>
+                    <button id="darkModeToggle" class="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary dark:text-gray-400 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="pt-24 pb-16">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <!-- Author Profile -->
+                <div class="text-center mb-16">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" alt="Dr. Sarah Chen" class="w-32 h-32 rounded-full object-cover mx-auto mb-6 ring-4 ring-accent/20">
+                    <h1 class="text-3xl sm:text-4xl font-display font-semibold text-primary dark:text-white mb-2">Dr. Sarah Chen, PhD</h1>
+                    <p class="text-xl text-accent dark:text-emerald-400 mb-4">Neuroscientist</p>
+                    <p class="text-secondary dark:text-gray-400 mb-6">Stanford University</p>
+                </div>
+
+                <!-- Bio -->
+                <div class="prose max-w-none text-lg text-secondary dark:text-gray-300 mb-16">
+                    <p>
+                        Dr. Sarah Chen is a neuroscientist at Stanford University specializing in the effects of plant interaction on brain structure and function. Her research focuses on understanding the neurological mechanisms underlying horticultural therapy and the therapeutic benefits of green spaces.
+                    </p>
+                    <p>
+                        Dr. Chen received her PhD in Neuroscience from MIT and completed postdoctoral research at the Max Planck Institute for Human Cognitive and Brain Sciences. Her work has been published in leading journals including <em>NeuroImage</em>, <em>Frontiers in Psychology</em>, and <em>Science Advances</em>.
+                    </p>
+                    <h3 class="text-xl font-semibold text-primary dark:text-white mt-8 mb-4">Research Interests</h3>
+                    <ul>
+                        <li>Neural plasticity and environmental enrichment</li>
+                        <li>Attention Restoration Theory and brain function</li>
+                        <li>Stress response and cortisol regulation</li>
+                        <li>Biophilic design and cognitive performance</li>
+                    </ul>
+                </div>
+
+                <!-- Articles by Author -->
+                <div>
+                    <h2 class="text-2xl font-display font-semibold text-primary dark:text-white mb-8">Articles by Dr. Chen</h2>
+                    <div class="grid grid-cols-1 gap-6">
+                        <a href="../articles/neuroscience-of-plant-care.html" class="card-lift block bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800">
+                            <div class="flex flex-col sm:flex-row">
+                                <div class="sm:w-48 aspect-video sm:aspect-square overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&q=80" alt="Neuroscience of Plant Care" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6">
+                                    <span class="text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest">Research</span>
+                                    <h3 class="text-xl font-bold text-primary dark:text-white mt-2 mb-2">The Neuroscience of Plant Care: How Green Spaces Rewire Your Brain</h3>
+                                    <p class="text-secondary dark:text-gray-400 text-base">New research reveals surprising connections between plant interaction and neural plasticity.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-gray-200 dark:border-gray-800 bg-surface dark:bg-gray-950">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <a href="../index.html" class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.56 162.44" class="w-6 h-6 text-accent dark:text-emerald-400" fill="currentColor"><path d="M88.94 119.91v42.53H75.4V92.17c-26.58.24-47.78-9.8-62.83-31.49C.01 42.59-.81 21.91.41.47 20.12-.94 39.07.28 56.17 11.7c16.82 11.23 26.68 27.1 31.55 47.46 10.5-14.19 22.98-24.84 39.54-28.46 11.82-2.59 24.14-2.93 36.15-4.26 6.86 44.12-17.09 92.51-74.47 93.48zM14.33 14.31C12.4 48.23 36.69 81.49 75.09 77.17c1.17-36.65-25.68-64.07-60.76-62.86zm75.07 90.8c37.04.92 61.67-25.55 60.93-63.1-32.53-4.75-62.82 26.43-60.93 63.1z"/></svg>
+                        <span class="font-semibold text-primary dark:text-white">Plant Therapy</span>
+                    </a>
+                    <p class="text-sm text-secondary dark:text-gray-500">&copy; 2026 Plant Therapy. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const html = document.documentElement;
+            if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            }
+            darkModeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('darkMode', html.classList.contains('dark'));
+            });
+        </script>
+    </body>
+</html>
