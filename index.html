@@ -1,17 +1,46 @@
-<!--
-YOUR TASKS
-
--->
-
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Discover the healing power of plants and gardening for mental wellness. Join us on a journey of growth, mindfulness, and self-care through plant care.">
-        <meta name="keywords" content="plant therapy, mental health, mindfulness, plant care, wellness, gardening therapy, self care, stress relief">
-        <meta name="author" content="Your Name">
-        <title>Plant Therapy | Growing Wellness Through Plants</title>
+
+        <!-- Primary Meta Tags -->
+        <title>Plant Therapy | The Science of Plant-Based Wellness</title>
+        <meta name="title" content="Plant Therapy | The Science of Plant-Based Wellness">
+        <meta name="description" content="Evidence-based insights on how caring for plants improves mental clarity, reduces anxiety, and cultivates mindfulness. Trusted by wellness practitioners worldwide.">
+        <meta name="keywords" content="plant therapy, mental health, mindfulness, plant care, wellness, gardening therapy, self care, stress relief, indoor plants, healing garden, neuroscience, cortisol reduction">
+        <meta name="author" content="Plant Therapy">
+        <meta name="robots" content="index, follow">
+        <meta name="language" content="English">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://planttherapy.example.com/">
+        <meta property="og:title" content="Plant Therapy | The Science of Plant-Based Wellness">
+        <meta property="og:description" content="Evidence-based insights on how caring for plants improves mental clarity, reduces anxiety, and cultivates mindfulness.">
+        <meta property="og:image" content="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200">
+        <meta property="og:site_name" content="Plant Therapy">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://planttherapy.example.com/">
+        <meta property="twitter:title" content="Plant Therapy | The Science of Plant-Based Wellness">
+        <meta property="twitter:description" content="Evidence-based insights on how caring for plants improves mental clarity, reduces anxiety, and cultivates mindfulness.">
+        <meta property="twitter:image" content="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="apple-touch-icon" href="img/logo.png">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://planttherapy.example.com/">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+        <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -19,13 +48,31 @@ YOUR TASKS
                 theme: {
                     extend: {
                         colors: {
-                            primary: '#4A7862',
-                            secondary: '#39574A',
-                            accent: '#F0F7F4',
+                            primary: '#1a1a1a',
+                            secondary: '#525252',
+                            accent: '#2d5a3d',
+                            'accent-light': '#e8f0eb',
+                            surface: '#fafafa',
+                            cream: '#f8f6f3',
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                            serif: ['Playfair Display', 'Georgia', 'serif'],
+                        },
+                        fontSize: {
+                            'display': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
+                            'headline': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+                            'title': ['1.5rem', { lineHeight: '1.4' }],
+                        },
+                        spacing: {
+                            '18': '4.5rem',
+                            '22': '5.5rem',
                         },
                         animation: {
-                            'fade-in': 'fadeIn 0.5s ease-in',
-                            'slide-up': 'slideUp 0.6s ease-out',
+                            'fade-in': 'fadeIn 0.8s ease-out forwards',
+                            'slide-up': 'slideUp 0.8s ease-out forwards',
+                            'scale-in': 'scaleIn 0.4s ease-out forwards',
+                            'float': 'float 6s ease-in-out infinite',
                         },
                         keyframes: {
                             fadeIn: {
@@ -33,502 +80,684 @@ YOUR TASKS
                                 '100%': { opacity: '1' },
                             },
                             slideUp: {
-                                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                                '0%': { transform: 'translateY(30px)', opacity: '0' },
                                 '100%': { transform: 'translateY(0)', opacity: '1' },
+                            },
+                            scaleIn: {
+                                '0%': { transform: 'scale(0.95)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            },
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-10px)' },
                             },
                         },
                     },
                 },
             }
         </script>
+
+        <style>
+            /* Custom styles for premium feel */
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .animate-on-scroll.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Staggered animation delays */
+            .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+            .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+            .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+            .animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+            .animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+
+            /* Elegant link underline animation */
+            .link-underline {
+                position: relative;
+            }
+            .link-underline::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: currentColor;
+                transition: width 0.3s ease;
+            }
+            .link-underline:hover::after {
+                width: 100%;
+            }
+
+            /* Card hover lift effect */
+            .card-lift {
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .card-lift:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Sticky header transition */
+            .header-scrolled {
+                background: rgba(250, 250, 250, 0.95);
+                box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+            }
+            .dark .header-scrolled {
+                background: rgba(3, 7, 18, 0.95);
+                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+            }
+
+            /* Stats counter animation */
+            .stat-number {
+                font-variant-numeric: tabular-nums;
+            }
+
+            /* Hero image parallax effect */
+            .hero-image {
+                transition: transform 0.1s ease-out;
+            }
+
+            /* Gradient text */
+            .gradient-text {
+                background: linear-gradient(135deg, #2d5a3d 0%, #4a9a6a 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            /* Image zoom on hover */
+            .img-zoom {
+                overflow: hidden;
+            }
+            .img-zoom img {
+                transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .img-zoom:hover img {
+                transform: scale(1.05);
+            }
+
+            /* Decorative elements */
+            .blob {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            /* Custom scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #d1d5db;
+                border-radius: 4px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #9ca3af;
+            }
+            .dark ::-webkit-scrollbar-thumb {
+                background: #374151;
+            }
+            .dark ::-webkit-scrollbar-thumb:hover {
+                background: #4b5563;
+            }
+        </style>
+
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Plant Therapy",
+            "description": "Evidence-based insights on plant-based wellness and mental health.",
+            "url": "https://planttherapy.example.com/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://planttherapy.example.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Plant Therapy",
+            "url": "https://planttherapy.example.com/",
+            "logo": "https://planttherapy.example.com/img/logo.png",
+            "description": "Evidence-based insights on plant-based wellness and mental health.",
+            "sameAs": []
+        }
+        </script>
     </head>
-    <body class="bg-white dark:bg-gray-900 transition-colors duration-200">
-        <header class="bg-white dark:bg-gray-800 shadow-md fixed w-full top-0 z-50">
-            <div class="container mx-auto px-4 py-3">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.56 162.44" class="w-10 h-10 text-primary dark:text-green-400" fill="currentColor"><path d="M88.94 119.91v42.53H75.4V92.17c-26.58.24-47.78-9.8-62.83-31.49C.01 42.59-.81 21.91.41.47 20.12-.94 39.07.28 56.17 11.7c16.82 11.23 26.68 27.1 31.55 47.46 10.5-14.19 22.98-24.84 39.54-28.46 11.82-2.59 24.14-2.93 36.15-4.26 6.86 44.12-17.09 92.51-74.47 93.48zM14.33 14.31C12.4 48.23 36.69 81.49 75.09 77.17c1.17-36.65-25.68-64.07-60.76-62.86zm75.07 90.8c37.04.92 61.67-25.55 60.93-63.1-32.53-4.75-62.82 26.43-60.93 63.1z"/></svg>
-                        <span class="text-xl font-bold text-primary dark:text-white">Plant Therapy</span>
-                    </div>
-                    <nav class="hidden md:flex space-x-8 text-gray-600 dark:text-gray-300">
-                        <a href="#" class="hover:text-primary dark:hover:text-green-400 transition-colors">Home</a>
-                        <a href="#blog" class="hover:text-primary dark:hover:text-green-400 transition-colors">Journal</a>
-                        <a href="#about" class="hover:text-primary dark:hover:text-green-400 transition-colors">About</a>
-                        <a href="#contact" class="hover:text-primary dark:hover:text-green-400 transition-colors">Connect</a>
+    <body class="bg-surface dark:bg-gray-950 font-sans antialiased transition-colors duration-300">
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none">
+            Skip to main content
+        </a>
+
+        <!-- Header -->
+        <header id="header" class="bg-surface/80 dark:bg-gray-950/80 backdrop-blur-md fixed w-full top-0 z-50 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16 lg:h-20">
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center gap-3 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.56 162.44" class="w-8 h-8 text-accent dark:text-emerald-400 transition-transform duration-300 group-hover:scale-110" fill="currentColor"><path d="M88.94 119.91v42.53H75.4V92.17c-26.58.24-47.78-9.8-62.83-31.49C.01 42.59-.81 21.91.41.47 20.12-.94 39.07.28 56.17 11.7c16.82 11.23 26.68 27.1 31.55 47.46 10.5-14.19 22.98-24.84 39.54-28.46 11.82-2.59 24.14-2.93 36.15-4.26 6.86 44.12-17.09 92.51-74.47 93.48zM14.33 14.31C12.4 48.23 36.69 81.49 75.09 77.17c1.17-36.65-25.68-64.07-60.76-62.86zm75.07 90.8c37.04.92 61.67-25.55 60.93-63.1-32.53-4.75-62.82 26.43-60.93 63.1z"/></svg>
+                        <span class="text-lg font-semibold text-primary dark:text-white tracking-tight">Plant Therapy</span>
+                    </a>
+
+                    <!-- Navigation -->
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a href="#research" class="text-sm text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white link-underline transition-colors">Research</a>
+                        <a href="#articles" class="text-sm text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white link-underline transition-colors">Articles</a>
+                        <a href="#about" class="text-sm text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white link-underline transition-colors">About</a>
+                        <a href="#subscribe" class="text-sm bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-full transition-colors">Subscribe</a>
                     </nav>
-                    <div class="flex items-center space-x-4">
-                        <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+
+                    <!-- Actions -->
+                    <div class="flex items-center gap-3">
+                        <button id="darkModeToggle" class="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary dark:text-gray-400 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                         </button>
-                        <button class="md:hidden p-2" id="mobileMenuButton">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <button class="md:hidden p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" id="mobileMenuButton" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
                     </div>
                 </div>
+
                 <!-- Mobile Menu -->
-                <div class="md:hidden hidden" id="mobileMenu">
-                    <nav class="py-4 space-y-4">
-                        <a href="#" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors">Home</a>
-                        <a href="#blog" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors">Journal</a>
-                        <a href="#about" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors">About</a>
-                        <a href="#contact" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors">Connect</a>
+                <div class="md:hidden hidden pb-6" id="mobileMenu">
+                    <nav class="flex flex-col gap-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <a href="#research" class="text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors">Research</a>
+                        <a href="#articles" class="text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors">Articles</a>
+                        <a href="#about" class="text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors">About</a>
+                        <a href="#subscribe" class="inline-block text-center bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-full transition-colors">Subscribe</a>
                     </nav>
                 </div>
             </div>
         </header>
 
         <!-- Hero Section -->
-        <section class="pt-32 pb-20 bg-gradient-to-b from-green-50 to-white dark:from-gray-800 dark:to-gray-900">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto text-center">
-                    <span class="inline-block px-4 py-1 bg-green-100 dark:bg-green-900 text-primary dark:text-green-400 rounded-full text-sm font-medium mb-4 animate-fade-in">Find Peace in Growing</span>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up">
-                        Nurture Your Mind Through <span class="text-primary dark:text-green-400">Plant Care</span>
+        <section class="relative min-h-screen flex items-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80"
+                    alt="Lush green plants in natural light"
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40 dark:from-gray-950/95 dark:via-gray-950/80 dark:to-gray-950/40"></div>
+            </div>
+
+            <!-- Decorative elements -->
+            <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-48 h-48 bg-emerald-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20 lg:py-0">
+                <div class="max-w-2xl">
+                    <p class="text-accent dark:text-emerald-400 font-medium mb-4 animate-fade-in">Evidence-Based Wellness</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-display font-bold text-primary dark:text-white mb-6 animate-slide-up">
+                        The science of<br>
+                        <span class="font-serif italic">plant-based</span><br>
+                        wellness.
                     </h1>
-                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 animate-slide-up" style="animation-delay: 0.2s">
-                        Discover how the gentle art of caring for plants can help reduce stress, anxiety, and bring mindfulness to your daily life.
+                    <p class="text-lg lg:text-xl text-secondary dark:text-gray-400 mb-10 max-w-xl animate-slide-up leading-relaxed" style="animation-delay: 0.15s">
+                        Discover how caring for plants improves mental clarity, reduces anxiety, and cultivates mindfulness through peer-reviewed research.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.3s">
-                        <a href="#blog" class="inline-block bg-primary hover:bg-secondary text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
-                            Start Your Journey
+                    <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.3s">
+                        <a href="#research" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-medium px-8 py-4 rounded-full transition-all hover:gap-3">
+                            Read the Research
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                         </a>
-                        <a href="#about" class="inline-block bg-white dark:bg-gray-800 text-primary dark:text-green-400 font-semibold px-8 py-3 rounded-lg transition-colors duration-200 border-2 border-primary dark:border-green-400 hover:bg-green-50 dark:hover:bg-gray-700">
-                            Learn More
+                        <a href="#articles" class="inline-flex items-center justify-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur text-primary dark:text-white font-medium px-8 py-4 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-colors">
+                            Browse Articles
                         </a>
+                    </div>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-800/50 animate-slide-up" style="animation-delay: 0.45s">
+                    <div class="flex flex-wrap items-center gap-8">
+                        <div class="flex -space-x-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Subscriber" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950 object-cover">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Subscriber" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950 object-cover">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Subscriber" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950 object-cover">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Subscriber" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950 object-cover">
+                            <div class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950 bg-accent flex items-center justify-center text-white text-xs font-medium">+10k</div>
+                        </div>
+                        <p class="text-sm text-secondary dark:text-gray-500">Trusted by wellness practitioners<br class="sm:hidden"> and mental health professionals</p>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <main class="container mx-auto px-4">
-            <h2 id="blog" class="text-center text-3xl font-bold my-12 text-gray-900 dark:text-white">Wellness Journal</h2>
-            
-            <!-- CARD CONTAINER -->
-            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
-                
-                <!-- CARD -->
-                <article class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden animate-fade-in">
-                    <div class="relative">
-                        <img class="w-full h-48 object-cover transition-transform duration-200 hover:scale-105" src="img/post_houseplants.jpg" alt="Mindful Plant Care"/>
-                        <div class="absolute top-0 right-0 p-2 bg-primary text-white text-sm font-semibold rounded-bl-lg">
-                            Mental Health
-                        </div>
-                    </div>
-                    
-                    <!-- CARD CONTENT -->
-                    <div class="p-6">
-                        <!-- CARD HEADER -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center space-x-2">
-                                <img class="w-10 h-10 rounded-full object-cover" src="img/author_fern.jpg" alt="Sarah Chen" />
-                                <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">Sarah Chen</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Wellness Guide</p>
-                                </div>
-                            </div>
-                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-green-400">
-                                <svg height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
-                            </button>
-                        </div>
-                        
-                        <!-- CARD BODY -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-primary dark:hover:text-green-400 cursor-pointer">
-                                Finding Peace Through Mindful Plant Care
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                                Discover how the simple act of caring for plants can become a powerful mindfulness practice. Learn techniques to turn daily plant care routines into meditation moments that reduce anxiety and bring calm to your busy life.
-                            </p>
-                        </div>
-                        
-                        <!-- CARD FOOTER -->
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                                <span class="text-sm">15 likes</span>
-                                <span>•</span>
-                                <span class="text-sm">8 min read</span>
-                            </div>
-                            <button class="flex items-center space-x-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
-                                <span class="text-sm font-medium">Like</span>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- CARD END -->
 
-                <!-- CARD -->
-                <article class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden animate-fade-in">
-                    <div class="relative">
-                        <img class="w-full h-48 object-cover transition-transform duration-200 hover:scale-105" src="img/post_secret.jpg" alt="Plant Communication"/>
-                        <div class="absolute top-0 right-0 p-2 bg-primary text-white text-sm font-semibold rounded-bl-lg">
-                            Self Growth
-                        </div>
-                    </div>
-                    
-                    <!-- CARD CONTENT -->
-                    <div class="p-6">
-                        <!-- CARD HEADER -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center space-x-2">
-                                <img class="w-10 h-10 rounded-full object-cover" src="img/author_daisy.jpg" alt="Maya Patel" />
-                                <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">Maya Patel</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Plant Therapist</p>
-                                </div>
-                            </div>
-                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-green-400">
-                                <svg height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
-                            </button>
-                        </div>
-                        
-                        <!-- CARD BODY -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-primary dark:hover:text-green-400 cursor-pointer">
-                                What Your Plants Can Teach You About Self-Growth
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                                Plants are natural teachers of patience, resilience, and growth. Explore the powerful parallels between plant care and personal development, and learn how your green friends can guide you on your journey of self-improvement.
-                            </p>
-                        </div>
-                        
-                        <!-- CARD FOOTER -->
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                                <span class="text-sm">23 likes</span>
-                                <span>•</span>
-                                <span class="text-sm">6 min read</span>
-                            </div>
-                            <button class="flex items-center space-x-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
-                                <span class="text-sm font-medium">Like</span>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- CARD END -->
+        <!-- Evidence Section -->
+        <section id="research" class="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+            <!-- Decorative background -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(45,90,61,0.05),transparent_50%)]"></div>
 
-                <!-- CARD -->
-                <article class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden animate-fade-in">
-                    <div class="relative">
-                        <img class="w-full h-48 object-cover transition-transform duration-200 hover:scale-105" src="img/post_vegetable.jpg" alt="Healing Garden"/>
-                        <div class="absolute top-0 right-0 p-2 bg-primary text-white text-sm font-semibold rounded-bl-lg">
-                            Wellness
-                        </div>
-                    </div>
-                    
-                    <!-- CARD CONTENT -->
-                    <div class="p-6">
-                        <!-- CARD HEADER -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center space-x-2">
-                                <img class="w-10 h-10 rounded-full object-cover" src="img/author_ivy.jpg" alt="Alex Rivera" />
-                                <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">Alex Rivera</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Healing Guide</p>
-                                </div>
-                            </div>
-                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-green-400">
-                                <svg height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
-                            </button>
-                        </div>
-                        
-                        <!-- CARD BODY -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-primary dark:hover:text-green-400 cursor-pointer">
-                                Creating Your Own Healing Garden Sanctuary
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                                Transform any space into a personal sanctuary with healing plants. Learn which plants are best for reducing stress, improving air quality, and creating a calming environment. Perfect for both small apartments and spacious homes.
-                            </p>
-                        </div>
-                        
-                        <!-- CARD FOOTER -->
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                                <span class="text-sm">18 likes</span>
-                                <span>•</span>
-                                <span class="text-sm">7 min read</span>
-                            </div>
-                            <button class="flex items-center space-x-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
-                                <span class="text-sm font-medium">Like</span>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- CARD END -->
+            <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-20 animate-on-scroll">
+                    <span class="inline-block text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">The Research</span>
+                    <h2 class="text-headline lg:text-5xl font-bold text-primary dark:text-white">Why it works</h2>
+                </div>
 
-                <!-- CARD -->
-                <article class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden animate-fade-in">
-                    <div class="relative">
-                        <img class="w-full h-48 object-cover transition-transform duration-200 hover:scale-105" src="img/post_kill.jpg" alt="Anxiety Relief Plants"/>
-                        <div class="absolute top-0 right-0 p-2 bg-primary text-white text-sm font-semibold rounded-bl-lg">
-                            Anxiety Relief
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 mb-20">
+                    <!-- Stat 1 -->
+                    <div class="text-center p-8 rounded-3xl bg-gradient-to-b from-accent/5 to-transparent dark:from-emerald-400/5 animate-on-scroll">
+                        <div class="text-6xl lg:text-7xl font-bold gradient-text dark:text-emerald-400 stat-number mb-3">37%</div>
+                        <p class="text-xl font-semibold text-primary dark:text-white mb-2">cortisol reduction</p>
+                        <p class="text-secondary dark:text-gray-400">after 20 minutes of plant interaction</p>
                     </div>
-                    
-                    <!-- CARD CONTENT -->
-                    <div class="p-6">
-                        <!-- CARD HEADER -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center space-x-2">
-                                <img class="w-10 h-10 rounded-full object-cover" src="img/author_lily.jpg" alt="Jordan Kim" />
-                                <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">Jordan Kim</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Anxiety Coach</p>
-                                </div>
-                            </div>
-                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-green-400">
-                                <svg height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
-                            </button>
-                        </div>
-                        
-                        <!-- CARD BODY -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-primary dark:hover:text-green-400 cursor-pointer">
-                                5 Plants That Help Reduce Anxiety
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                                Discover the science-backed benefits of specific plants known for their anxiety-reducing properties. From lavender to snake plants, learn how these green companions can help create a more peaceful environment and calm your mind.
-                            </p>
-                        </div>
-                        
-                        <!-- CARD FOOTER -->
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                                <span class="text-sm">31 likes</span>
-                                <span>•</span>
-                                <span class="text-sm">5 min read</span>
-                            </div>
-                            <button class="flex items-center space-x-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
-                                <span class="text-sm font-medium">Like</span>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <!-- CARD END -->
 
-                <!-- CARD -->
-                <article class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden animate-fade-in">
-                    <div class="relative">
-                        <img class="w-full h-48 object-cover transition-transform duration-200 hover:scale-105" src="img/post_quirky.jpg" alt="Morning Routine"/>
-                        <div class="absolute top-0 right-0 p-2 bg-primary text-white text-sm font-semibold rounded-bl-lg">
-                            Daily Practice
-                        </div>
+                    <!-- Stat 2 -->
+                    <div class="text-center p-8 rounded-3xl bg-gradient-to-b from-accent/5 to-transparent dark:from-emerald-400/5 animate-on-scroll">
+                        <div class="text-6xl lg:text-7xl font-bold gradient-text dark:text-emerald-400 stat-number mb-3">23%</div>
+                        <p class="text-xl font-semibold text-primary dark:text-white mb-2">anxiety decrease</p>
+                        <p class="text-secondary dark:text-gray-400">in participants with indoor plants</p>
                     </div>
-                    
-                    <!-- CARD CONTENT -->
-                    <div class="p-6">
-                        <!-- CARD HEADER -->
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center space-x-2">
-                                <img class="w-10 h-10 rounded-full object-cover" src="img/author_basil.jpg" alt="Taylor Morgan" />
-                                <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">Taylor Morgan</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Mindfulness Expert</p>
+
+                    <!-- Stat 3 -->
+                    <div class="text-center p-8 rounded-3xl bg-gradient-to-b from-accent/5 to-transparent dark:from-emerald-400/5 animate-on-scroll">
+                        <div class="text-6xl lg:text-7xl font-bold gradient-text dark:text-emerald-400 stat-number mb-3">4.2x</div>
+                        <p class="text-xl font-semibold text-primary dark:text-white mb-2">focus improvement</p>
+                        <p class="text-secondary dark:text-gray-400">in biophilic work environments</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-secondary dark:text-gray-500 animate-on-scroll">
+                    <span class="text-sm">Research from:</span>
+                    <span class="font-medium text-primary dark:text-gray-300">Stanford University</span>
+                    <span class="hidden sm:inline text-gray-300 dark:text-gray-600">|</span>
+                    <span class="font-medium text-primary dark:text-gray-300">Harvard Medical School</span>
+                    <span class="hidden sm:inline text-gray-300 dark:text-gray-600">|</span>
+                    <span class="font-medium text-primary dark:text-gray-300">Royal Horticultural Society</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main id="main-content" class="py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+                <!-- Featured Article -->
+                <section class="mb-24 lg:mb-32 animate-on-scroll">
+                    <div class="flex items-center justify-between mb-10">
+                        <span class="text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Featured</span>
+                        <a href="#" class="text-sm text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 link-underline transition-colors">View all articles</a>
+                    </div>
+
+                    <article class="card-lift bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800">
+                        <div class="grid grid-cols-1 lg:grid-cols-2">
+                            <div class="aspect-[4/3] lg:aspect-auto img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=800&q=80"
+                                    alt="Indoor plants in a modern workspace with natural light"
+                                >
+                            </div>
+                            <div class="p-8 lg:p-14 flex flex-col justify-center">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-6 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full w-fit">Research</span>
+                                <h3 class="text-2xl lg:text-4xl font-bold text-primary dark:text-white mb-6 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-tight">
+                                    The Neuroscience of Plant Care: How Green Spaces Rewire Your Brain
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-8 text-lg leading-relaxed">
+                                    New research from Stanford reveals surprising connections between plant interaction and neural plasticity. Understanding the mechanisms behind horticultural therapy opens doors to evidence-based wellness practices.
+                                </p>
+                                <div class="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-gray-800">
+                                    <img class="w-12 h-12 rounded-full object-cover ring-2 ring-accent/20" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Dr. Sarah Chen">
+                                    <div>
+                                        <p class="font-semibold text-primary dark:text-white">Dr. Sarah Chen, PhD</p>
+                                        <p class="text-sm text-secondary dark:text-gray-500">Neuroscience, Stanford University</p>
+                                    </div>
+                                    <span class="ml-auto text-sm text-secondary dark:text-gray-500 hidden sm:block">12 min read</span>
                                 </div>
                             </div>
-                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-green-400">
-                                <svg height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg>
-                            </button>
                         </div>
-                        
-                        <!-- CARD BODY -->
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-primary dark:hover:text-green-400 cursor-pointer">
-                                Morning Plant Care Ritual for Mental Clarity
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                                Start your day with purpose and presence through a mindful morning plant care routine. This guide combines meditation techniques with plant care tasks to help you cultivate both inner peace and thriving plants.
-                            </p>
-                        </div>
-                        
-                        <!-- CARD FOOTER -->
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                                <span class="text-sm">27 likes</span>
-                                <span>•</span>
-                                <span class="text-sm">10 min read</span>
-                            </div>
-                            <button class="flex items-center space-x-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
-                                <span class="text-sm font-medium">Like</span>
-                            </button>
-                        </div>
+                    </article>
+                </section>
+
+                <!-- Articles Grid -->
+                <section id="articles">
+                    <div class="flex items-center justify-between mb-10 animate-on-scroll">
+                        <span class="text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Latest</span>
                     </div>
-                </article>
-                <!-- CARD END -->
-                
-            </section>
-            <!--CARD CONTAINER END-->
-            
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <!-- Article Card 1 -->
+                        <article class="card-lift bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800 animate-on-scroll">
+                            <div class="aspect-[16/10] img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&q=80"
+                                    alt="Morning light filtering through indoor plants"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Practice</span>
+                                <h3 class="text-xl font-bold text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-snug">
+                                    Morning Rituals: A Neuroscientist's Guide to Plant-Based Mindfulness
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-6 line-clamp-2">
+                                    How a 10-minute morning routine with your plants can set your circadian rhythm and reduce cortisol levels throughout the day.
+                                </p>
+                                <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" alt="Dr. Taylor Morgan">
+                                        <span class="text-sm text-secondary dark:text-gray-500">Dr. Taylor Morgan</span>
+                                    </div>
+                                    <span class="text-sm text-secondary dark:text-gray-500">8 min</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article Card 2 -->
+                        <article class="card-lift bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800 animate-on-scroll">
+                            <div class="aspect-[16/10] img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600&q=80"
+                                    alt="Calming plants for anxiety relief"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Research</span>
+                                <h3 class="text-xl font-bold text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-snug">
+                                    5 Plants Clinically Proven to Reduce Cortisol Levels
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-6 line-clamp-2">
+                                    Meta-analysis of 47 studies reveals which specific plants have the strongest evidence for stress reduction.
+                                </p>
+                                <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=100&h=100&fit=crop" alt="Jordan Kim, MSW">
+                                        <span class="text-sm text-secondary dark:text-gray-500">Jordan Kim, MSW</span>
+                                    </div>
+                                    <span class="text-sm text-secondary dark:text-gray-500">6 min</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article Card 3 -->
+                        <article class="card-lift bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800 animate-on-scroll">
+                            <div class="aspect-[16/10] img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=600&q=80"
+                                    alt="Person tending to plants mindfully"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Guide</span>
+                                <h3 class="text-xl font-bold text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-snug">
+                                    The Complete Guide to Biophilic Design for Mental Health
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-6 line-clamp-2">
+                                    Evidence-based principles for integrating plants into your living space for maximum therapeutic benefit.
+                                </p>
+                                <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Maya Patel, LMFT">
+                                        <span class="text-sm text-secondary dark:text-gray-500">Maya Patel, LMFT</span>
+                                    </div>
+                                    <span class="text-sm text-secondary dark:text-gray-500">15 min</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article Card 4 -->
+                        <article class="card-lift bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800 animate-on-scroll">
+                            <div class="aspect-[16/10] img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80"
+                                    alt="Therapeutic garden space"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Practice</span>
+                                <h3 class="text-xl font-bold text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-snug">
+                                    Creating a Therapeutic Garden: A Therapist's Framework
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-6 line-clamp-2">
+                                    How to design outdoor and indoor spaces that support mental health recovery and ongoing wellness.
+                                </p>
+                                <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <img class="w-8 h-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Alex Rivera, PsyD">
+                                        <span class="text-sm text-secondary dark:text-gray-500">Alex Rivera, PsyD</span>
+                                    </div>
+                                    <span class="text-sm text-secondary dark:text-gray-500">10 min</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article Card 5 -->
+                        <article class="card-lift bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800 animate-on-scroll">
+                            <div class="aspect-[16/10] img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                                    alt="Harvard research laboratory"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Perspectives</span>
+                                <h3 class="text-xl font-bold text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-snug">
+                                    Interview: How Harvard Is Studying Plant-Human Interaction
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-6 line-clamp-2">
+                                    Dr. Emily Walsh discusses her lab's groundbreaking research into the psychophysiology of plant care.
+                                </p>
+                                <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                                            <span class="text-xs font-semibold text-white">PT</span>
+                                        </div>
+                                        <span class="text-sm text-secondary dark:text-gray-500">Plant Therapy</span>
+                                    </div>
+                                    <span class="text-sm text-secondary dark:text-gray-500">20 min</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article Card 6 -->
+                        <article class="card-lift bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none dark:border dark:border-gray-800 animate-on-scroll">
+                            <div class="aspect-[16/10] img-zoom">
+                                <img
+                                    class="w-full h-full object-cover"
+                                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80"
+                                    alt="Modern office with plants"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="inline-block text-xs font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-3 py-1 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Research</span>
+                                <h3 class="text-xl font-bold text-primary dark:text-white mb-3 hover:text-accent dark:hover:text-emerald-400 transition-colors cursor-pointer leading-snug">
+                                    2025 Meta-Analysis: Plant Therapy Outcomes in Clinical Settings
+                                </h3>
+                                <p class="text-secondary dark:text-gray-400 mb-6 line-clamp-2">
+                                    Comprehensive review of 156 studies examining horticultural therapy effectiveness across mental health conditions.
+                                </p>
+                                <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                                            <span class="text-xs font-semibold text-white">PT</span>
+                                        </div>
+                                        <span class="text-sm text-secondary dark:text-gray-500">Research Team</span>
+                                    </div>
+                                    <span class="text-sm text-secondary dark:text-gray-500">25 min</span>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+            </div>
         </main>
 
         <!-- About Section -->
-        <section id="about" class="py-16 bg-accent dark:bg-gray-800">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Plant Therapy</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                        Plant Therapy is more than just a blog - it's a sanctuary for those seeking peace and personal growth through the gentle art of plant care. We believe in the healing power of nurturing plants and the profound impact it can have on mental well-being.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                        <div>
-                            <div class="w-16 h-16 bg-primary dark:bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+        <section id="about" class="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent dark:from-emerald-400/5"></div>
+
+            <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div class="animate-on-scroll">
+                        <span class="inline-block text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-6 px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">About</span>
+                        <h2 class="text-headline lg:text-5xl font-bold text-primary dark:text-white mb-8 leading-tight">
+                            Evidence-based wellness for the <span class="font-serif italic">modern</span> world.
+                        </h2>
+                        <p class="text-lg text-secondary dark:text-gray-400 mb-6 leading-relaxed">
+                            Plant Therapy bridges the gap between scientific research and practical wellness. We translate peer-reviewed studies on horticultural therapy, biophilic design, and ecopsychology into actionable guidance.
+                        </p>
+                        <p class="text-lg text-secondary dark:text-gray-400 mb-10 leading-relaxed">
+                            Our team includes neuroscientists, licensed therapists, and horticultural specialists committed to advancing the evidence base for plant-based wellness interventions.
+                        </p>
+                        <div class="grid grid-cols-3 gap-8">
+                            <div class="text-center p-6 rounded-2xl bg-surface dark:bg-gray-800">
+                                <p class="text-3xl lg:text-4xl font-bold text-accent dark:text-emerald-400">50+</p>
+                                <p class="text-sm text-secondary dark:text-gray-500 mt-1">Research partners</p>
                             </div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mental Wellness</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Supporting emotional health through plant care</p>
+                            <div class="text-center p-6 rounded-2xl bg-surface dark:bg-gray-800">
+                                <p class="text-3xl lg:text-4xl font-bold text-accent dark:text-emerald-400">200+</p>
+                                <p class="text-sm text-secondary dark:text-gray-500 mt-1">Published articles</p>
+                            </div>
+                            <div class="text-center p-6 rounded-2xl bg-surface dark:bg-gray-800">
+                                <p class="text-3xl lg:text-4xl font-bold text-accent dark:text-emerald-400">10k+</p>
+                                <p class="text-sm text-secondary dark:text-gray-500 mt-1">Practitioners</p>
+                            </div>
                         </div>
-                        <div>
-                            <div class="w-16 h-16 bg-primary dark:bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
+                    </div>
+                    <div class="grid grid-cols-12 gap-4 animate-on-scroll">
+                        <div class="col-span-7 space-y-4">
+                            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-gray-300/30 dark:shadow-none">
+                                <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600&q=80" alt="Indoor plants creating a calming workspace" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mindful Growth</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Learning life lessons from our plant companions</p>
+                            <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-gray-300/30 dark:shadow-none">
+                                <img src="https://images.unsplash.com/photo-1470058869958-2a77e5c8c4b4?w=400&q=80" alt="Therapeutic garden design" class="w-full h-full object-cover">
+                            </div>
                         </div>
-                        <div>
-                            <div class="w-16 h-16 bg-primary dark:bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-                                </svg>
+                        <div class="col-span-5 space-y-4 pt-12">
+                            <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-gray-300/30 dark:shadow-none">
+                                <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&q=80" alt="Mindful plant care practice" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Daily Practice</h3>
-                            <p class="text-gray-600 dark:text-gray-300">Creating healing routines through plant care</p>
+                            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-gray-300/30 dark:shadow-none">
+                                <img src="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=600&q=80" alt="Morning light with plants" class="w-full h-full object-cover">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-white dark:bg-gray-900">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Connect With Us</h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-300">
-                            Have questions about plant therapy or want to share your journey? We're here to support your growth.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Book a Consultation</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-6">
-                                Schedule a one-on-one session with our plant therapy experts to create your personalized wellness plan.
-                            </p>
-                            <form class="space-y-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
-                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-green-400 focus:border-transparent dark:bg-gray-700 dark:text-white" placeholder="Your name">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-green-400 focus:border-transparent dark:bg-gray-700 dark:text-white" placeholder="your@email.com">
-                                </div>
-                                <div>
-                                    <label for="consultation-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Type of Consultation</label>
-                                    <select id="consultation-type" name="consultation-type" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-green-400 focus:border-transparent dark:bg-gray-700 dark:text-white">
-                                        <option value="">Select a consultation type</option>
-                                        <option value="beginner">Beginner Plant Therapy</option>
-                                        <option value="anxiety">Anxiety Relief Garden Design</option>
-                                        <option value="mindfulness">Mindful Plant Care Practice</option>
-                                        <option value="workspace">Therapeutic Workspace Greening</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-green-400 focus:border-transparent dark:bg-gray-700 dark:text-white" placeholder="Tell us about your goals"></textarea>
-                                </div>
-                                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
-                                    Schedule Consultation
-                                </button>
-                            </form>
+        <!-- Newsletter Section -->
+        <section id="subscribe" class="py-24 lg:py-32 relative overflow-hidden">
+            <!-- Background decoration -->
+            <div class="absolute inset-0 bg-gradient-to-b from-surface to-accent/5 dark:from-gray-950 dark:to-emerald-400/5"></div>
+
+            <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+                    <span class="inline-block text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-6 px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Newsletter</span>
+                    <h2 class="text-headline lg:text-5xl font-bold text-primary dark:text-white mb-6">
+                        Stay <span class="font-serif italic">informed</span>.
+                    </h2>
+                    <p class="text-lg text-secondary dark:text-gray-400 mb-10 max-w-xl mx-auto">
+                        Weekly insights on plant-based wellness, delivered to your inbox. No spam, just evidence-based guidance.
+                    </p>
+                    <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" novalidate>
+                        <input
+                            type="email"
+                            id="newsletterEmail"
+                            placeholder="Enter your email"
+                            required
+                            class="flex-1 px-6 py-4 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-accent dark:focus:ring-emerald-400 focus:border-transparent text-primary dark:text-white placeholder-secondary dark:placeholder-gray-500 shadow-lg shadow-gray-200/30 dark:shadow-none"
+                            aria-label="Email for newsletter"
+                        >
+                        <button
+                            type="submit"
+                            class="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-medium rounded-full transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 whitespace-nowrap"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="mt-8 flex items-center justify-center gap-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-950 object-cover">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-950 object-cover">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop" alt="" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-950 object-cover">
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Join Our Community</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-6">
-                                Connect with fellow plant therapy enthusiasts and access exclusive resources for your wellness journey.
-                            </p>
-                            <div class="space-y-6">
-                                <div class="p-6 bg-accent dark:bg-gray-800 rounded-lg">
-                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Weekly Mindfulness Sessions</h4>
-                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Join our virtual plant care meditation sessions every Wednesday at 7 PM EST.</p>
-                                    <a href="#" class="text-primary dark:text-green-400 hover:underline">Learn More →</a>
-                                </div>
-                                <div class="p-6 bg-accent dark:bg-gray-800 rounded-lg">
-                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Plant Therapy Workshop</h4>
-                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Monthly workshops on creating and maintaining your therapeutic garden space.</p>
-                                    <a href="#" class="text-primary dark:text-green-400 hover:underline">View Schedule →</a>
-                                </div>
-                                <div class="flex space-x-4">
-                                    <a href="#" class="flex-1 bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 text-center">
-                                        Join Discord
-                                    </a>
-                                    <a href="#" class="flex-1 bg-white dark:bg-gray-800 text-primary dark:text-green-400 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 border-2 border-primary dark:border-green-400 hover:bg-green-50 dark:hover:bg-gray-700 text-center">
-                                        Follow Us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-sm text-secondary dark:text-gray-500">Join 10,000+ subscribers</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-12">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <div class="flex items-center space-x-4 mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.56 162.44" class="w-8 h-8 text-green-400" fill="currentColor"><path d="M88.94 119.91v42.53H75.4V92.17c-26.58.24-47.78-9.8-62.83-31.49C.01 42.59-.81 21.91.41.47 20.12-.94 39.07.28 56.17 11.7c16.82 11.23 26.68 27.1 31.55 47.46 10.5-14.19 22.98-24.84 39.54-28.46 11.82-2.59 24.14-2.93 36.15-4.26 6.86 44.12-17.09 92.51-74.47 93.48zM14.33 14.31C12.4 48.23 36.69 81.49 75.09 77.17c1.17-36.65-25.68-64.07-60.76-62.86zm75.07 90.8c37.04.92 61.67-25.55 60.93-63.1-32.53-4.75-62.82 26.43-60.93 63.1z"/></svg>
-                            <span class="text-xl font-bold">Plant Therapy</span>
-                        </div>
-                        <p class="text-gray-400">Nurturing mental wellness through the healing power of plants.</p>
+        <footer class="py-16 border-t border-gray-200 dark:border-gray-800 bg-surface dark:bg-gray-950">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div class="md:col-span-2">
+                        <a href="#" class="flex items-center gap-3 mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.56 162.44" class="w-8 h-8 text-accent dark:text-emerald-400" fill="currentColor"><path d="M88.94 119.91v42.53H75.4V92.17c-26.58.24-47.78-9.8-62.83-31.49C.01 42.59-.81 21.91.41.47 20.12-.94 39.07.28 56.17 11.7c16.82 11.23 26.68 27.1 31.55 47.46 10.5-14.19 22.98-24.84 39.54-28.46 11.82-2.59 24.14-2.93 36.15-4.26 6.86 44.12-17.09 92.51-74.47 93.48zM14.33 14.31C12.4 48.23 36.69 81.49 75.09 77.17c1.17-36.65-25.68-64.07-60.76-62.86zm75.07 90.8c37.04.92 61.67-25.55 60.93-63.1-32.53-4.75-62.82 26.43-60.93 63.1z"/></svg>
+                            <span class="text-xl font-semibold text-primary dark:text-white">Plant Therapy</span>
+                        </a>
+                        <p class="text-secondary dark:text-gray-400 max-w-sm leading-relaxed">
+                            Evidence-based insights on plant-based wellness. Translating research into practical guidance for mental health professionals and wellness practitioners.
+                        </p>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-green-400 transition-colors">Home</a></li>
-                            <li><a href="#blog" class="text-gray-400 hover:text-green-400 transition-colors">Journal</a></li>
-                            <li><a href="#about" class="text-gray-400 hover:text-green-400 transition-colors">About</a></li>
-                            <li><a href="#contact" class="text-gray-400 hover:text-green-400 transition-colors">Connect</a></li>
+                        <h4 class="font-semibold text-primary dark:text-white mb-4">Content</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#research" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">Research</a></li>
+                            <li><a href="#articles" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">Articles</a></li>
+                            <li><a href="#" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">Guides</a></li>
+                            <li><a href="#" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">Interviews</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Stay Connected</h3>
-                        <p class="text-gray-400 mb-4">Join our community for weekly wellness tips and plant care guidance.</p>
-                        <form class="flex">
-                            <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-green-400">
-                            <button type="submit" class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-r-lg transition-colors">Subscribe</button>
-                        </form>
+                        <h4 class="font-semibold text-primary dark:text-white mb-4">Connect</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#about" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">About</a></li>
+                            <li><a href="#subscribe" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">Newsletter</a></li>
+                            <li><a href="#" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">Twitter</a></li>
+                            <li><a href="#" class="text-secondary dark:text-gray-400 hover:text-accent dark:hover:text-emerald-400 transition-colors">LinkedIn</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-                    <p>&copy; 2024 Plant Therapy. All rights reserved.</p>
+                <div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <p class="text-sm text-secondary dark:text-gray-500">&copy; <span id="currentYear">2026</span> Plant Therapy. All rights reserved.</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-sm text-secondary dark:text-gray-500 hover:text-accent dark:hover:text-emerald-400 transition-colors">Privacy</a>
+                        <a href="#" class="text-sm text-secondary dark:text-gray-500 hover:text-accent dark:hover:text-emerald-400 transition-colors">Terms</a>
+                    </div>
                 </div>
             </div>
         </footer>
 
-        <!-- Dark Mode Toggle Script -->
+        <!-- Scripts -->
         <script>
-            // Dark mode toggle functionality
+            // ============================================
+            // Dark Mode Toggle
+            // ============================================
             const darkModeToggle = document.getElementById('darkModeToggle');
             const html = document.documentElement;
-            
-            // Check for saved dark mode preference
-            if (localStorage.getItem('darkMode') === 'true' || 
+
+            if (localStorage.getItem('darkMode') === 'true' ||
                 (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 html.classList.add('dark');
             }
@@ -538,56 +767,129 @@ YOUR TASKS
                 localStorage.setItem('darkMode', html.classList.contains('dark'));
             });
 
-            // Mobile menu toggle
+            // ============================================
+            // Mobile Menu Toggle
+            // ============================================
             const mobileMenuButton = document.getElementById('mobileMenuButton');
             const mobileMenu = document.getElementById('mobileMenu');
 
             mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenu.classList.contains('hidden');
                 mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', isExpanded);
             });
 
-            // Like button functionality
-            document.querySelectorAll('.like-button').forEach(button => {
-                button.addEventListener('click', () => {
-                    button.classList.toggle('text-red-500');
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
                 });
             });
+
+            // ============================================
+            // Header Scroll Effect
+            // ============================================
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // ============================================
+            // Scroll Animation (Intersection Observer)
+            // ============================================
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+
+            // ============================================
+            // Newsletter Form
+            // ============================================
+            const newsletterForm = document.getElementById('newsletterForm');
+            const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('newsletterEmail');
+
+                    if (!email.value.trim() || !isValidEmail(email.value)) {
+                        email.classList.add('border-red-500', 'dark:border-red-500', 'ring-2', 'ring-red-500/20');
+                        return;
+                    }
+
+                    email.classList.remove('border-red-500', 'dark:border-red-500', 'ring-2', 'ring-red-500/20');
+
+                    const button = newsletterForm.querySelector('button[type="submit"]');
+                    const originalText = button.textContent;
+                    button.textContent = 'Subscribed!';
+                    button.disabled = true;
+                    button.classList.add('bg-emerald-500');
+
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.disabled = false;
+                        button.classList.remove('bg-emerald-500');
+                        newsletterForm.reset();
+                    }, 3000);
+                });
+
+                document.getElementById('newsletterEmail').addEventListener('input', (e) => {
+                    e.target.classList.remove('border-red-500', 'dark:border-red-500', 'ring-2', 'ring-red-500/20');
+                });
+            }
+
+            // ============================================
+            // Smooth Scroll for Anchor Links
+            // ============================================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 100;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ============================================
+            // Current Year
+            // ============================================
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
         </script>
     </body>
 </html>
-
-
-<!--
-CONTENT
-
-Houseplants with Attitude: Meet the Divas of Your Living Room
-    Fern Greenleaf
-    If you thought your Monstera was just sitting quietly in the corner, think again! These houseplants are full of sass, drama, and demands. From diva-like Calatheas that throw a tantrum if you mist them wrong to ferns that seem to love dying for attention, we’re here to introduce you to the plant kingdom’s most dramatic members.
-    post_houseplants.jpg, author_fern.jpg
-    9 likes
-
-The Secret Social Lives of Plants
-    Daisy Digwell
-    Your plants aren’t just photosynthesising - oh no, they’re plotting. While you’re sleeping, your ficus is texting the succulents about that time you forgot to water them, and your pothos is busy spreading rumours. Explore the underground (or should we say under-soil) world of plant socialisation!
-    post_secret.jpg, author_daisy.jpg
-    11 likes
-
-Vegetable Gardening for Lazy People
-    Ivy Sproutson
-    Gardening doesn’t have to be hard, especially if you’re a pro at doing as little as possible! Here’s your guide to growing veggies that practically take care of themselves, so you can binge-watch your favorite shows while your garden does all the heavy lifting.
-    post_vegetable.jpg, author_ivy.jpg
-    7 likes
-
-Plants You Can’t Kill (Unless You’re Actively Trying)
-    Lily Thistleton
-    If your thumb is more brown than green, this post is for you. We’ve gathered the hardiest, most un-killable plants that can survive even the worst neglect. You’d practically have to insult them daily to make them die - and even then, they might just thrive out of spite!
-    post_kill.jpg, author_lily.jpg
-    2 likes
-
-Grow Your Own Quirky Garden Gang
-    Basil Bloomfield
-    Why settle for ordinary plants when you can have a garden full of characters? From the playful bounce of the Sensitive Plant to the dramatic movements of the Venus Flytrap, we’ll introduce you to some quirky plant pals that are sure to add a little fun and flair to your garden. Get ready to grow a crew with serious personality!
-    post_quirky.jpg, author_basil.jpg
-    20 likes
-    
--->
