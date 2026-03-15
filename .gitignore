@@ -47,9 +47,9 @@ node_modules
 
 # Build output
 .next/
-dist/
-build/
 out/
 
 # Vercel
 .vercel
+
+# Next.js
