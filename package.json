@@ -16,13 +16,13 @@
   ],
   "author": "Plant Therapy",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/plant-therapy#readme",
+  "homepage": "https://github.com/forbiddenlink/plant-therapy#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/plant-therapy.git"
+    "url": "git+https://github.com/forbiddenlink/plant-therapy.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/plant-therapy/issues"
+    "url": "https://github.com/forbiddenlink/plant-therapy/issues"
   },
   "scripts": {
     "start": "npx http-server . -o",
@@ -34,5 +34,6 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "private": true
 }
