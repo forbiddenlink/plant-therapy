@@ -46,7 +46,7 @@
   },
   "pnpm": {
     "overrides": {
-      "postcss": ">=8.5.3",
+      "postcss": ">=8.5.23",
       "vite": ">=6.4.2"
     }
   },
