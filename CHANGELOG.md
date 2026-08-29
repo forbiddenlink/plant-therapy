@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.0...v1.0.1) (2026-08-29)
+
+
+### Bug Fixes
+
+* **deps:** honour resolution overrides and patch transitive vulnerabilities ([#28](https://github.com/forbiddenlink/plant-therapy/issues/28)) ([a81dc1c](https://github.com/forbiddenlink/plant-therapy/commit/a81dc1c645e8f4749fb32719aeef37661ab378da))
+
 ## 1.0.0 (2026-07-30)
 
 
