@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.1...v1.0.2) (2026-09-02)
+
+
+### Bug Fixes
+
+* **ci:** let pnpm/action-setup read the version from packageManager ([5726644](https://github.com/forbiddenlink/plant-therapy/commit/5726644cf1858b9e332e0b8fa36648dac7dcaa60))
+* **ci:** resync package-lock.json so npm ci stops failing ([6f75199](https://github.com/forbiddenlink/plant-therapy/commit/6f7519938b62ec2ddb1d11bc3f906adde1f127da))
+* **deps:** give every resolution override an upper bound ([1d0bcf2](https://github.com/forbiddenlink/plant-therapy/commit/1d0bcf2dd42adf7bf1190791995f726d3a1d9642))
+
 ## [1.0.1](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.0...v1.0.1) (2026-08-29)
 
 
