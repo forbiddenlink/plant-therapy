@@ -1,6 +1,6 @@
 {
   "name": "plant-therapy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A responsive wellness blog about plant care and mental health, built with Tailwind CSS. Features dark mode, form validation, smooth animations, and full accessibility support.",
   "keywords": [
     "tailwind-css",
