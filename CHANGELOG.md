@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.2...v1.0.3) (2026-09-06)
+
+
+### Bug Fixes
+
+* **security:** pin transitive dependencies off their open advisories ([#38](https://github.com/forbiddenlink/plant-therapy/issues/38)) ([9d19fae](https://github.com/forbiddenlink/plant-therapy/commit/9d19fae5628fdd6bd1e221ff43273da8b6d2d915))
+
 ## [1.0.2](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.1...v1.0.2) (2026-09-02)
 
 
