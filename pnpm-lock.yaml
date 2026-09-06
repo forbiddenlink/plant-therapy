@@ -16,12 +16,9 @@ importers:
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
-      qs:
-        specifier: '>=6.16.0 <7'
-        version: 6.16.0
     devDependencies:
       '@biomejs/biome':
-        specifier: ^2.5.11
+        specifier: 2.5.11
         version: 2.5.11
       '@testing-library/react':
         specifier: ^16.3.3
