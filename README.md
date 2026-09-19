@@ -48,6 +48,8 @@ A responsive wellness blog focused on plant care and mental health, built with m
 
 ```
 plant-therapy/
+├── articles/               # Individual article pages
+├── authors/                # Author bio pages
 ├── img/                    # Image assets
 │   ├── author_*.jpg       # Author profile images (128x128)
 │   ├── post_*.jpg         # Blog post featured images
@@ -62,24 +64,24 @@ plant-therapy/
 
 ### Prerequisites
 - Node.js 14.0.0 or higher
-- npm
+- pnpm
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/plant-therapy.git
+   git clone https://github.com/forbiddenlink/plant-therapy.git
    cd plant-therapy
    ```
 
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Start the development server:
    ```bash
-   npm start
+   pnpm start
    ```
 
 4. Open your browser to the URL shown in the terminal (typically `http://localhost:8080`)
@@ -88,9 +90,9 @@ plant-therapy/
 
 | Command | Description |
 |---------|-------------|
-| `npm start` | Start server and open in browser |
-| `npm run serve` | Start server on port 3000 |
-| `npm run preview` | Start server with no caching |
+| `pnpm start` | Start server and open in browser |
+| `pnpm run serve` | Start server on port 3000 |
+| `pnpm run preview` | Start server with no caching |
 
 ## Key Implementation Details
 
@@ -138,7 +140,6 @@ This project demonstrates:
 
 ## Roadmap
 
-- [ ] Add blog post detail pages
 - [ ] Implement backend for form submissions
 - [ ] Add search functionality
 - [ ] Create user authentication
