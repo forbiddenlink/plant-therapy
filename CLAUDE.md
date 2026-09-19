@@ -31,7 +31,8 @@ lockfile, and `.github/workflows/ci.yml` installs via pnpm - all three agree.
   garden framework)
 - `authors/` - author bio pages (5 author profiles)
 - `js/perenual.js` - Perenual plant API client (`PERENUAL_API_KEY`); not wired into any HTML
-  page as of this writing (see CODE ISSUES)
+  page as of this writing, and reads the key via `process.env`, which does not exist in this
+  browser-only, no-build-step site
 - `img/` - author photos, post images, logo
 - `favicon.svg`
 
@@ -53,12 +54,7 @@ lockfile, and `.github/workflows/ci.yml` installs via pnpm - all three agree.
 ## Gotchas
 
 - No test script and no test files exist, despite `vitest` and `@testing-library/react`
-  listed in devDependencies (see CODE ISSUES).
+  listed in devDependencies.
 - Dependabot + release-please + a `verify-overrides.yml` workflow manage security patches via
   `pnpm.overrides` in `package.json` (postcss, qs, vite bounds) - check CHANGELOG.md before
   assuming a dependency bump is safe to revert.
-
-## Claude Code
-
-Project-level `.claude/` directory present (rtk recall config etc.) - check its contents for
-any project-specific hooks or skills before assuming none exist.
