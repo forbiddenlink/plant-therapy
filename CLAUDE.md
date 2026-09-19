@@ -13,17 +13,15 @@ Repo: https://github.com/forbiddenlink/plant-therapy
 - Node >=14 required (`engines` in package.json); CI runs on Node 22
 - Biome 2.5.11 for lint/format (`biome.json`)
 
-## Commands (npm; CI uses `npm ci`)
+## Commands (pnpm; CI runs `pnpm install --frozen-lockfile`)
 
-- `npm start` - serve and open in browser (`npx http-server . -o`)
-- `npm run serve` - serve on port 3000
-- `npm run preview` - serve with caching disabled
-- `npm run biome:check` / `npm run biome:fix` / `npm run biome:format`
+- `pnpm start` - serve and open in browser (`npx http-server . -o`)
+- `pnpm run serve` - serve on port 3000
+- `pnpm run preview` - serve with caching disabled
+- `pnpm run biome:check` / `pnpm run biome:fix` / `pnpm run biome:format`
 
-Note: `package.json` pins PNPM via its `packageManager` field, and `pnpm-lock.yaml` sits
-beside `package-lock.json`, but the CI workflow runs `npm ci` with an NPM dependency cache.
-Treat NPM as the working, CI-verified package manager; the PNPM pin looks stale
-(see CODE ISSUES).
+`packageManager` in `package.json` pins `pnpm@10.34.5`, `pnpm-lock.yaml` is the tracked
+lockfile, and `.github/workflows/ci.yml` installs via pnpm - all three agree.
 
 ## Layout
 
