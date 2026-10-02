@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.3...v1.0.4) (2026-10-02)
+
+
+### Bug Fixes
+
+* remove fabricated claims, fake newsletter, placeholder SEO URLs ([#49](https://github.com/forbiddenlink/plant-therapy/issues/49)) ([06b51f2](https://github.com/forbiddenlink/plant-therapy/commit/06b51f29ab8fcfa22099f598767222d09546b95f))
+
 ## [1.0.3](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.2...v1.0.3) (2026-09-08)
 
 
