@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.4...v1.0.5) (2026-10-17)
+
+
+### Bug Fixes
+
+* **deps:** clear transitive CVEs with bounded overrides ([#54](https://github.com/forbiddenlink/plant-therapy/issues/54)) ([639fa03](https://github.com/forbiddenlink/plant-therapy/commit/639fa039de344fc41b230c130d005639b768dbeb))
+
 ## [1.0.4](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.3...v1.0.4) (2026-10-13)
 
 
