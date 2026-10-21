@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.5...v1.0.6) (2026-10-21)
+
+
+### Bug Fixes
+
+* **deps:** override follow-redirects to 1.16.1 to clear two high advisories ([#60](https://github.com/forbiddenlink/plant-therapy/issues/60)) ([60e392d](https://github.com/forbiddenlink/plant-therapy/commit/60e392dcaf52bcbae100402e7b23361207e5bb01))
+* **deps:** raise vite override floor to 8.3.3 ([#62](https://github.com/forbiddenlink/plant-therapy/issues/62)) ([5313c1e](https://github.com/forbiddenlink/plant-therapy/commit/5313c1ec72fabd222597c57740205d3a22612581))
+
 ## [1.0.5](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.4...v1.0.5) (2026-10-19)
 
 
