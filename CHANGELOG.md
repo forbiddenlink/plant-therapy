@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.6...v1.0.7) (2026-10-28)
+
+
+### Bug Fixes
+
+* **deps:** raise qs override floor to 6.16.1 ([#66](https://github.com/forbiddenlink/plant-therapy/issues/66)) ([fe2cf93](https://github.com/forbiddenlink/plant-therapy/commit/fe2cf93af02229a3dfad43bc1ced8e4ce27daee2))
+
 ## [1.0.6](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.5...v1.0.6) (2026-10-21)
 
 
