@@ -53,5 +53,5 @@
       "follow-redirects": ">=1.16.1 <2.0.0"
     }
   },
-  "packageManager": "pnpm@10.34.7"
+  "packageManager": "pnpm@10.34.9"
 }
