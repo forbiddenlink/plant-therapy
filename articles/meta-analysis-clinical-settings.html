@@ -39,7 +39,7 @@
         <link rel="icon" type="image/svg+xml" href="../favicon.svg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Fragment+Mono&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
 
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
@@ -48,20 +48,32 @@
                 theme: {
                     extend: {
                         colors: {
-                            primary: '#1a1a1a',
-                            secondary: '#525252',
-                            accent: '#2d5a3d',
-                            'accent-light': '#e8f0eb',
-                            surface: '#fafafa',
-                            cream: '#f8f6f3',
-                            sage: '#9caf88',
-                            moss: '#4a5d3c',
-                            botanical: '#1e3a2b',
+                            primary: '#14190F',
+                            secondary: '#3B4630',
+                            accent: '#9A4455',
+                            'accent-light': '#EBD9D9',
+                            surface: '#E4EAD3',
+                            cream: '#EEF2E2',
+                            sage: '#B8C49F',
+                            moss: '#3B4630',
+                            botanical: '#14190F',
+                            white: '#F4F7EA',
+                            gray: {
+                                50: '#EEF2E2', 100: '#DCE4C8', 200: '#C6D1AC', 300: '#B5C19A',
+                                400: '#A9B596', 500: '#5A664A', 600: '#3B4630', 700: '#2C3622',
+                                800: '#232B1B', 900: '#1A2214', 950: '#10150D',
+                            },
+                            emerald: { 400: '#E8A3AE', 500: '#D9808F', 600: '#9A4455' },
+                            amber: {
+                                50: '#F3E4E4', 100: '#F3E4E4', 300: '#B7707F', 500: '#C98995',
+                                900: '#4A1B27', 950: '#2A1218',
+                            },
                         },
                         fontFamily: {
-                            display: ['Fraunces', 'Georgia', 'serif'],
-                            body: ['Source Serif 4', 'Georgia', 'serif'],
-                            sans: ['system-ui', '-apple-system', 'sans-serif'],
+                            display: ['Epilogue', 'system-ui', 'sans-serif'],
+                            body: ['Literata', 'Georgia', 'serif'],
+                            sans: ['Epilogue', 'system-ui', '-apple-system', 'sans-serif'],
+                            mono: ['Fragment Mono', 'ui-monospace', 'monospace'],
                         },
                     },
                 },
@@ -69,9 +81,9 @@
         </script>
         <style>
             /* Prose Typography */
-            .prose p { margin-bottom: 1.75rem; line-height: 1.9; font-family: 'Source Serif 4', Georgia, serif; }
-            .prose h2 { margin-top: 3rem; margin-bottom: 1.25rem; font-family: 'Fraunces', Georgia, serif; font-weight: 600; }
-            .prose h3 { margin-top: 2.5rem; margin-bottom: 1rem; font-family: 'Fraunces', Georgia, serif; }
+            .prose p { margin-bottom: 1.75rem; line-height: 1.9; font-family: 'Literata', Georgia, serif; }
+            .prose h2 { margin-top: 3rem; margin-bottom: 1.25rem; font-family: 'Epilogue', Georgia, serif; font-weight: 600; }
+            .prose h3 { margin-top: 2.5rem; margin-bottom: 1rem; font-family: 'Epilogue', Georgia, serif; }
             .prose ul, .prose ol { margin-bottom: 1.75rem; padding-left: 1.75rem; }
             .prose li { margin-bottom: 0.75rem; line-height: 1.8; }
             .prose blockquote {
@@ -79,8 +91,8 @@
                 padding: 2rem 2.5rem;
                 margin: 2.5rem -1rem;
                 font-style: italic;
-                font-family: 'Fraunces', Georgia, serif;
-                background: linear-gradient(135deg, rgba(156, 175, 136, 0.08) 0%, rgba(45, 90, 61, 0.05) 100%);
+                font-family: 'Epilogue', Georgia, serif;
+                background: linear-gradient(135deg, rgba(20, 25, 15, 0.08) 0%, rgba(154, 68, 85, 0.05) 100%);
                 border-radius: 0 1rem 1rem 0;
                 position: relative;
             }
@@ -90,8 +102,8 @@
                 top: 0.5rem;
                 left: 1rem;
                 font-size: 4rem;
-                font-family: 'Fraunces', Georgia, serif;
-                color: rgba(45, 90, 61, 0.15);
+                font-family: 'Epilogue', Georgia, serif;
+                color: rgba(154, 68, 85, 0.15);
                 line-height: 1;
             }
             .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
@@ -107,12 +119,12 @@
                 width: 100%;
                 height: 4px;
                 z-index: 100;
-                background: rgba(156, 175, 136, 0.15);
+                background: rgba(20, 25, 15, 0.15);
             }
             .progress-bar {
                 width: 0%;
                 height: 100%;
-                background: linear-gradient(90deg, #1e3a2b 0%, #2d5a3d 40%, #9caf88 100%);
+                background: linear-gradient(90deg, #14190F 0%, #9A4455 40%, #B8C49F 100%);
                 transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
                 position: relative;
             }
@@ -124,9 +136,9 @@
                 transform: translateY(-50%);
                 width: 12px;
                 height: 12px;
-                background: #2d5a3d;
+                background: #9A4455;
                 border-radius: 50%;
-                box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.2), 0 2px 8px rgba(0,0,0,0.15);
+                box-shadow: 0 0 0 3px rgba(154, 68, 85, 0.2), 0 2px 8px rgba(0,0,0,0.15);
                 opacity: 0;
                 transition: opacity 0.3s ease;
             }
@@ -155,15 +167,15 @@
                 transition: all 0.25s ease;
                 font-family: system-ui, sans-serif;
             }
-            .toc-link:hover { color: #2d5a3d; }
+            .toc-link:hover { color: #9A4455; }
             .toc-link.active {
-                color: #2d5a3d;
-                border-left-color: #2d5a3d;
+                color: #9A4455;
+                border-left-color: #9A4455;
                 font-weight: 500;
             }
             .dark .toc-link { color: #9ca3af; }
-            .dark .toc-link:hover, .dark .toc-link.active { color: #34d399; }
-            .dark .toc-link.active { border-left-color: #34d399; }
+            .dark .toc-link:hover, .dark .toc-link.active { color: #E8A3AE; }
+            .dark .toc-link.active { border-left-color: #E8A3AE; }
 
             /* Floating Share */
             .share-float {
@@ -194,13 +206,13 @@
             }
             .share-btn:hover {
                 transform: scale(1.1);
-                box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(45, 90, 61, 0.2);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(154, 68, 85, 0.2);
             }
             .share-btn svg { width: 18px; height: 18px; color: #525252; transition: color 0.2s; }
-            .share-btn:hover svg { color: #2d5a3d; }
+            .share-btn:hover svg { color: #9A4455; }
             .dark .share-btn { background: #1f2937; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
             .dark .share-btn svg { color: #9ca3af; }
-            .dark .share-btn:hover svg { color: #34d399; }
+            .dark .share-btn:hover svg { color: #E8A3AE; }
 
             /* Breadcrumb */
             .breadcrumb {
@@ -216,10 +228,10 @@
                 text-decoration: none;
                 transition: color 0.2s;
             }
-            .breadcrumb a:hover { color: #2d5a3d; }
+            .breadcrumb a:hover { color: #9A4455; }
             .breadcrumb span { color: #9ca3af; }
             .dark .breadcrumb a { color: #9ca3af; }
-            .dark .breadcrumb a:hover { color: #34d399; }
+            .dark .breadcrumb a:hover { color: #E8A3AE; }
 
             /* Hide sidebars on smaller screens */
             @media (max-width: 1280px) {
@@ -229,15 +241,15 @@
             /* Article drop cap */
             .prose > p:first-of-type::first-letter {
                 float: left;
-                font-family: 'Fraunces', Georgia, serif;
+                font-family: 'Epilogue', Georgia, serif;
                 font-size: 4.5rem;
                 line-height: 0.8;
                 padding-right: 0.75rem;
                 padding-top: 0.25rem;
-                color: #2d5a3d;
+                color: #9A4455;
                 font-weight: 500;
             }
-            .dark .prose > p:first-of-type::first-letter { color: #34d399; }
+            .dark .prose > p:first-of-type::first-letter { color: #E8A3AE; }
 
             /* Smooth anchor scrolling */
             html { scroll-behavior: smooth; }
@@ -254,7 +266,7 @@
             }
             .click-to-tweet:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 8px 30px rgba(45, 90, 61, 0.12);
+                box-shadow: 0 8px 30px rgba(154, 68, 85, 0.12);
             }
             .click-to-tweet blockquote {
                 margin: 0;
@@ -271,15 +283,16 @@
                 margin-top: 1rem;
                 font-size: 0.8rem;
                 font-family: system-ui, sans-serif;
-                color: #2d5a3d;
+                color: #9A4455;
                 font-weight: 500;
             }
             .click-to-tweet .tweet-action svg { width: 16px; height: 16px; }
             .dark .click-to-tweet {
-                background: linear-gradient(135deg, #1f2937 0%, #1e3a2b 100%);
+                background: linear-gradient(135deg, #1f2937 0%, #14190F 100%);
             }
-            .dark .click-to-tweet .tweet-action { color: #34d399; }
+            .dark .click-to-tweet .tweet-action { color: #E8A3AE; }
         </style>
+        <link rel="stylesheet" href="../css/theme.css">
     </head>
     <body class="bg-surface dark:bg-gray-950 font-body antialiased transition-colors duration-300">
         <!-- Progress Bar -->
