@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.7...v1.1.0) (2026-11-04)
+
+
+### Features
+
+* **ui:** replace template hero with a read-time article index ([#70](https://github.com/forbiddenlink/plant-therapy/issues/70)) ([fba0f8f](https://github.com/forbiddenlink/plant-therapy/commit/fba0f8feaff9b2f60af6980b4b1a06c61a500aa8))
+
 ## [1.0.7](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.6...v1.0.7) (2026-10-28)
 
 
