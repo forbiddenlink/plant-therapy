@@ -38,7 +38,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Fragment+Mono&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
 
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -48,16 +48,31 @@
                 theme: {
                     extend: {
                         colors: {
-                            primary: '#1a1a1a',
-                            secondary: '#525252',
-                            accent: '#2d5a3d',
-                            'accent-light': '#e8f0eb',
-                            surface: '#fafafa',
-                            cream: '#f8f6f3',
+                            primary: '#14190F',
+                            secondary: '#3B4630',
+                            accent: '#9A4455',
+                            'accent-light': '#EBD9D9',
+                            surface: '#E4EAD3',
+                            cream: '#EEF2E2',
+                            sage: '#B8C49F',
+                            moss: '#3B4630',
+                            botanical: '#14190F',
+                            white: '#F4F7EA',
+                            gray: {
+                                50: '#EEF2E2', 100: '#DCE4C8', 200: '#C6D1AC', 300: '#B5C19A',
+                                400: '#A9B596', 500: '#5A664A', 600: '#3B4630', 700: '#2C3622',
+                                800: '#232B1B', 900: '#1A2214', 950: '#10150D',
+                            },
+                            emerald: { 400: '#E8A3AE', 500: '#D9808F', 600: '#9A4455' },
+                            amber: {
+                                50: '#F3E4E4', 100: '#F3E4E4', 300: '#B7707F', 500: '#C98995',
+                                900: '#4A1B27', 950: '#2A1218',
+                            },
                         },
                         fontFamily: {
-                            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                            serif: ['Playfair Display', 'Georgia', 'serif'],
+                            sans: ['Epilogue', 'system-ui', '-apple-system', 'sans-serif'],
+                            serif: ['Literata', 'Georgia', 'serif'],
+                            mono: ['Fragment Mono', 'ui-monospace', 'monospace'],
                         },
                         fontSize: {
                             'display': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
@@ -145,11 +160,11 @@
 
             /* Sticky header transition */
             .header-scrolled {
-                background: rgba(250, 250, 250, 0.95);
+                background: rgba(228, 234, 211, 0.95);
                 box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
             }
             .dark .header-scrolled {
-                background: rgba(3, 7, 18, 0.95);
+                background: rgba(16, 21, 13, 0.95);
                 box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
             }
 
@@ -165,7 +180,7 @@
 
             /* Gradient text */
             .gradient-text {
-                background: linear-gradient(135deg, #2d5a3d 0%, #4a9a6a 100%);
+                background: linear-gradient(135deg, #9A4455 0%, #B35A6C 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -230,6 +245,7 @@
             "sameAs": []
         }
         </script>
+        <link rel="stylesheet" href="css/theme.css">
     </head>
     <body class="bg-surface dark:bg-gray-950 font-sans antialiased transition-colors duration-300">
         <!-- Skip to main content link for accessibility -->
@@ -286,92 +302,150 @@
         </header>
 
         <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img
-                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80"
-                    alt="Lush green plants in natural light"
-                    class="w-full h-full object-cover"
-                >
-                <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40 dark:from-gray-950/95 dark:via-gray-950/80 dark:to-gray-950/40"></div>
-            </div>
-
-            <!-- Decorative elements -->
-            <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-1/4 right-1/3 w-48 h-48 bg-emerald-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s"></div>
-
-            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20 lg:py-0">
-                <div class="max-w-2xl">
-                    <p class="text-accent dark:text-emerald-400 font-medium mb-4 animate-fade-in">Plant-Based Wellness</p>
-                    <h1 class="text-4xl sm:text-5xl lg:text-display font-bold text-primary dark:text-white mb-6 animate-slide-up">
-                        The science of<br>
-                        <span class="font-serif italic">plant-based</span><br>
-                        wellness.
-                    </h1>
-                    <p class="text-lg lg:text-xl text-secondary dark:text-gray-400 mb-10 max-w-xl animate-slide-up leading-relaxed" style="animation-delay: 0.15s">
-                        Discover how caring for plants may support mental clarity, ease stress, and cultivate mindfulness, and what research on plants and wellbeing explores.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.3s">
-                        <a href="#research" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-medium px-8 py-4 rounded-full transition-all hover:gap-3">
-                            Read the Research
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
-                        <a href="#articles" class="inline-flex items-center justify-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur text-primary dark:text-white font-medium px-8 py-4 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 transition-colors">
-                            Browse Articles
-                        </a>
+        <section id="top" class="hero pt-28 lg:pt-32 pb-16 lg:pb-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-14">
+                    <div class="lg:col-span-8">
+                        <p class="mono-label mb-5 animate-fade-in">Plant-Based Wellness</p>
+                        <h1 class="hero-title animate-slide-up">
+                            The science of plant-based wellness.
+                        </h1>
+                    </div>
+                    <div class="lg:col-span-4 animate-slide-up" style="animation-delay: 0.15s">
+                        <p class="text-lg text-secondary dark:text-gray-400 mb-8 leading-relaxed">
+                            Discover how caring for plants may support mental clarity, ease stress, and cultivate mindfulness, and what research on plants and wellbeing explores.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#research" class="btn-solid">
+                                Read the Research
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="#articles" class="btn-line">Browse Articles</a>
+                        </div>
+                        <p class="text-sm text-secondary dark:text-gray-400 mt-6">A demo portfolio project about plants and wellbeing.</p>
                     </div>
                 </div>
 
-                <!-- About this demo -->
-                <div class="mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-800/50 animate-slide-up" style="animation-delay: 0.45s">
-                    <p class="text-sm text-secondary dark:text-gray-400">A demo portfolio project about plants and wellbeing.</p>
-                </div>
+                <!-- Signature object: the site's own article index, bar length = read time -->
+                <figure class="ledger" aria-labelledby="ledgerCaption">
+                    <figcaption id="ledgerCaption" class="ledger-head">
+                        <span class="mono-label">Index of the 7 sample articles</span>
+                        <span class="mono-label ledger-head-r">Bar length shows read time</span>
+                    </figcaption>
+                    <ol class="ledger-list">
+                        <li>
+                            <a href="articles/neuroscience-of-plant-care.html" class="ledger-row">
+                                <span class="ledger-no">01</span>
+                                <span class="ledger-type">Research</span>
+                                <span class="ledger-title">The Neuroscience of Plant Care: How Green Spaces May Affect Your Brain</span>
+                                <span class="ledger-author">Sarah Chen</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:12"></span><span class="ledger-min">12 min</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="articles/morning-rituals-plant-mindfulness.html" class="ledger-row">
+                                <span class="ledger-no">02</span>
+                                <span class="ledger-type">Practice</span>
+                                <span class="ledger-title">Morning Rituals: A Guide to Plant-Based Mindfulness</span>
+                                <span class="ledger-author">Taylor Morgan</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:8"></span><span class="ledger-min">8 min</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="articles/plants-reduce-cortisol.html" class="ledger-row">
+                                <span class="ledger-no">03</span>
+                                <span class="ledger-type">Research</span>
+                                <span class="ledger-title">5 Plants Studied for Stress Reduction</span>
+                                <span class="ledger-author">Jordan Kim</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:6"></span><span class="ledger-min">6 min</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="articles/biophilic-design-mental-health.html" class="ledger-row">
+                                <span class="ledger-no">04</span>
+                                <span class="ledger-type">Guide</span>
+                                <span class="ledger-title">The Complete Guide to Biophilic Design for Mental Health</span>
+                                <span class="ledger-author">Maya Patel</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:15"></span><span class="ledger-min">15 min</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="articles/therapeutic-garden-framework.html" class="ledger-row">
+                                <span class="ledger-no">05</span>
+                                <span class="ledger-type">Practice</span>
+                                <span class="ledger-title">Creating a Therapeutic Garden: A Practical Framework</span>
+                                <span class="ledger-author">Alex Rivera</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:10"></span><span class="ledger-min">10 min</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="articles/harvard-plant-human-interaction.html" class="ledger-row">
+                                <span class="ledger-no">06</span>
+                                <span class="ledger-type">Perspectives</span>
+                                <span class="ledger-title">Interview: Studying Plant-Human Interaction</span>
+                                <span class="ledger-author">Plant Therapy</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:20"></span><span class="ledger-min">20 min</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="articles/meta-analysis-clinical-settings.html" class="ledger-row">
+                                <span class="ledger-no">07</span>
+                                <span class="ledger-type">Research</span>
+                                <span class="ledger-title">Plant Therapy Outcomes in Clinical Settings: A Sample Evidence Summary</span>
+                                <span class="ledger-author">Research Team</span>
+                                <span class="ledger-time"><span class="ledger-bar" aria-hidden="true" style="--min:25"></span><span class="ledger-min">25 min</span></span>
+                            </a>
+                        </li>
+                    </ol>
+                    <p class="ledger-foot">The authors and interviewees on this site are fictional personas created for the demo.</p>
+                </figure>
             </div>
         </section>
 
         <!-- Evidence Section -->
         <section id="research" class="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
             <!-- Decorative background -->
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(45,90,61,0.05),transparent_50%)]"></div>
-
+            
             <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="text-center mb-20 animate-on-scroll">
+                <div class="mb-14 animate-on-scroll">
                     <span class="inline-block text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-4 px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">The Research</span>
                     <h2 class="text-headline lg:text-5xl font-bold text-primary dark:text-white">Why it may help</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 mb-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 mb-16 notes">
                     <!-- Stat 1 -->
-                    <div class="text-center p-8 rounded-3xl bg-gradient-to-b from-accent/5 to-transparent dark:from-emerald-400/5 animate-on-scroll">
-                        <div class="text-6xl lg:text-7xl font-bold gradient-text dark:text-emerald-400 stat-number mb-3">Stress</div>
+                    <div class="note animate-on-scroll">
+                        <p class="mono-label mb-6">Note 01</p>
+                        <div class="note-word stat-number mb-4">Stress</div>
                         <p class="text-xl font-semibold text-primary dark:text-white mb-2">Cortisol and calm</p>
                         <p class="text-secondary dark:text-gray-400">Studies explore whether time with plants helps people feel less stressed. Findings so far are early and often small.</p>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="text-center p-8 rounded-3xl bg-gradient-to-b from-accent/5 to-transparent dark:from-emerald-400/5 animate-on-scroll">
-                        <div class="text-6xl lg:text-7xl font-bold gradient-text dark:text-emerald-400 stat-number mb-3">Mood</div>
+                    <div class="note animate-on-scroll">
+                        <p class="mono-label mb-6">Note 02</p>
+                        <div class="note-word stat-number mb-4">Mood</div>
                         <p class="text-xl font-semibold text-primary dark:text-white mb-2">Anxiety and wellbeing</p>
                         <p class="text-secondary dark:text-gray-400">Researchers look at whether indoor plants relate to better mood, though results vary between studies.</p>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="text-center p-8 rounded-3xl bg-gradient-to-b from-accent/5 to-transparent dark:from-emerald-400/5 animate-on-scroll">
-                        <div class="text-6xl lg:text-7xl font-bold gradient-text dark:text-emerald-400 stat-number mb-3">Focus</div>
+                    <div class="note animate-on-scroll">
+                        <p class="mono-label mb-6">Note 03</p>
+                        <div class="note-word stat-number mb-4">Focus</div>
                         <p class="text-xl font-semibold text-primary dark:text-white mb-2">Attention and work</p>
                         <p class="text-secondary dark:text-gray-400">Research on biophilic spaces asks whether greenery supports attention. The evidence is still developing.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-secondary dark:text-gray-400 animate-on-scroll">
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-4 text-secondary dark:text-gray-400 animate-on-scroll">
                     <span class="text-sm">Topics researchers study:</span>
                     <span class="font-medium text-primary dark:text-gray-300">Horticultural therapy</span>
-                    <span class="hidden sm:inline text-gray-300 dark:text-gray-600">|</span>
+                    <span class="hidden sm:inline text-secondary dark:text-gray-400" aria-hidden="true">|</span>
                     <span class="font-medium text-primary dark:text-gray-300">Biophilic design</span>
-                    <span class="hidden sm:inline text-gray-300 dark:text-gray-600">|</span>
+                    <span class="hidden sm:inline text-secondary dark:text-gray-400" aria-hidden="true">|</span>
                     <span class="font-medium text-primary dark:text-gray-300">Attention restoration</span>
                 </div>
             </div>
@@ -613,14 +687,13 @@
 
         <!-- About Section -->
         <section id="about" class="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent dark:from-emerald-400/5"></div>
-
+            
             <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     <div class="animate-on-scroll">
                         <span class="inline-block text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-6 px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">About</span>
                         <h2 class="text-headline lg:text-5xl font-bold text-primary dark:text-white mb-8 leading-tight">
-                            Plant-based wellness for the <span class="font-serif italic">modern</span> world.
+                            Plant-based wellness for the modern world.
                         </h2>
                         <p class="text-lg text-secondary dark:text-gray-400 mb-6 leading-relaxed">
                             Plant Therapy is a demo site that sketches how research on horticultural therapy, biophilic design, and ecopsychology could be turned into practical guidance for everyday life.
@@ -670,7 +743,7 @@
                 <div class="max-w-3xl mx-auto text-center animate-on-scroll">
                     <span class="inline-block text-sm font-semibold text-accent dark:text-emerald-400 uppercase tracking-widest mb-6 px-4 py-1.5 bg-accent/10 dark:bg-emerald-400/10 rounded-full">Newsletter</span>
                     <h2 class="text-headline lg:text-5xl font-bold text-primary dark:text-white mb-6">
-                        Stay <span class="font-serif italic">informed</span>.
+                        Stay informed.
                     </h2>
                     <p class="text-lg text-secondary dark:text-gray-400 mb-6 max-w-xl mx-auto">
                         Newsletter sign-ups are not open yet. This is a demo site, so the form below is turned off and no email address is collected.
