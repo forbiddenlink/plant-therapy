@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/forbiddenlink/plant-therapy/compare/v1.1.0...v1.1.1) (2026-11-05)
+
+
+### Bug Fixes
+
+* **deps:** raise follow-redirects override floor to 1.16.2 ([#72](https://github.com/forbiddenlink/plant-therapy/issues/72)) ([189ee59](https://github.com/forbiddenlink/plant-therapy/commit/189ee5920473a519c9f3f053e9bfb669e0aadebe))
+
 ## [1.1.0](https://github.com/forbiddenlink/plant-therapy/compare/v1.0.7...v1.1.0) (2026-11-04)
 
 
