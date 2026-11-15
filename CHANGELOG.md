@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/forbiddenlink/plant-therapy/compare/v1.1.1...v1.1.2) (2026-11-15)
+
+
+### Bug Fixes
+
+* **ui:** keep the page usable with blocked storage, no IntersectionObserver, or reduced motion ([#74](https://github.com/forbiddenlink/plant-therapy/issues/74)) ([f4efc76](https://github.com/forbiddenlink/plant-therapy/commit/f4efc764ccc9d34c24f286ee855988755901ec71))
+
 ## [1.1.1](https://github.com/forbiddenlink/plant-therapy/compare/v1.1.0...v1.1.1) (2026-11-05)
 
 
