@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/forbiddenlink/plant-therapy/compare/v1.1.2...v1.1.3) (2026-11-15)
+
+
+### Performance Improvements
+
+* build Tailwind to static CSS instead of compiling in the browser ([#76](https://github.com/forbiddenlink/plant-therapy/issues/76)) ([bca7e36](https://github.com/forbiddenlink/plant-therapy/commit/bca7e36f6b9747eaf43992045ed7d52755459cb0))
+
 ## [1.1.2](https://github.com/forbiddenlink/plant-therapy/compare/v1.1.1...v1.1.2) (2026-11-15)
 
 
