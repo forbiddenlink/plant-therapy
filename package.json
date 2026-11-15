@@ -30,7 +30,9 @@
     "preview": "npx http-server . -o -c-1",
     "biome:check": "biome check .",
     "biome:fix": "biome check . --write",
-    "biome:format": "biome format . --write"
+    "biome:format": "biome format . --write",
+    "build:css": "tailwindcss -c tailwind.config.index.cjs -i css/tailwind.input.css -o css/tailwind.index.css --minify && tailwindcss -c tailwind.config.inner.cjs -i css/tailwind.input.css -o css/tailwind.inner.css --minify",
+    "test": "node tests/ui.test.cjs && node tests/no-cdn.test.cjs"
   },
   "dependencies": {
     "http-server": "^14.1.1"
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.6.4",
     "@testing-library/react": "16.3.3",
+    "tailwindcss": "~3.4.19",
     "vitest": "4.1.12"
   },
   "pnpm": {
