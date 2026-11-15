@@ -1,170 +1,69 @@
 # Plant Therapy
 
-A responsive wellness blog focused on plant care and mental health, built with modern web technologies. This project demonstrates proficiency in Tailwind CSS, responsive design, accessibility, and vanilla JavaScript.
+A static wellness blog about plant care and mental health. It is a demo portfolio project, written for portfolio reviewers rather than a real readership.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Accessibility](https://img.shields.io/badge/Accessibility-WCAG_2.1-green)
+Live: https://plant-therapy.vercel.app
 
-## Features
+## What is in it
 
-### User Experience
-- **Dark Mode** - System preference detection with manual toggle and localStorage persistence
-- **Responsive Design** - Mobile-first approach with seamless tablet and desktop layouts
-- **Smooth Animations** - Custom fade-in and slide-up animations for enhanced engagement
-- **Smooth Scrolling** - Anchor link navigation with smooth scroll behavior
+- A home page, seven article pages (`articles/`) and five author pages (`authors/`).
+- Dark mode that follows the system setting, with a manual toggle saved in localStorage.
+- Responsive, mobile-first layout with a mobile menu, a skip-to-content link and ARIA labels on interactive controls. Animations are reduced when the user prefers reduced motion.
+- Open Graph and Twitter Card tags, JSON-LD structured data, `robots.txt` and `sitemap.xml`.
+- A newsletter form that is intentionally disabled ("Sign-ups are not open yet").
 
-### Accessibility
-- Skip to main content link
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- Semantic HTML5 structure
-- High contrast text ratios
+`js/perenual.js` is a client for the Perenual plant API (`PERENUAL_API_KEY`). It is not loaded by any page, and it reads the key through `process.env`, which does not exist in this browser-only site.
 
-### Interactive Elements
-- Like button functionality with visual feedback
-- Form validation with inline error messages
-- Mobile hamburger menu with animation
-- Hover effects on cards and images
+## Stack
 
-### SEO Optimized
-- Open Graph meta tags for social sharing
-- Twitter Card support
-- JSON-LD structured data
-- Semantic HTML structure
-- Descriptive meta tags
+- HTML5, vanilla JavaScript, no framework and no bundler
+- Tailwind CSS v3, prebuilt with the Tailwind CLI into committed files (`css/tailwind.index.css` and `css/tailwind.inner.css`)
+- `http-server` for local serving
+- Biome for lint and format
 
-## Tech Stack
+## Getting started
 
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Semantic structure |
-| Tailwind CSS | Utility-first styling |
-| Vanilla JavaScript | Interactivity |
-| http-server | Development server |
+Prerequisites: Node (`engines` is `>=14.0.0`, CI runs Node 22) and pnpm (pinned by `packageManager` in `package.json`).
 
-## Project Structure
-
-```
-plant-therapy/
-├── articles/               # Individual article pages
-├── authors/                # Author bio pages
-├── img/                    # Image assets
-│   ├── author_*.jpg       # Author profile images (128x128)
-│   ├── post_*.jpg         # Blog post featured images
-│   └── logo.png           # Site logo
-├── index.html             # Main HTML file
-├── favicon.svg            # Site favicon
-├── package.json           # Project configuration
-└── README.md              # Project documentation
+```bash
+pnpm install
+pnpm start        # serves the site and opens it in your browser
 ```
 
-## Getting Started
+### Scripts
 
-### Prerequisites
-- Node.js 14.0.0 or higher
-- pnpm
+```bash
+pnpm start             # npx http-server . -o
+pnpm run serve         # serve on port 3000
+pnpm run preview       # serve with caching disabled
+pnpm run build:css     # regenerate the committed Tailwind CSS (run after adding utility classes)
+pnpm test              # UI behavior test plus a check that no page loads the Tailwind CDN
+pnpm run biome:check   # also biome:fix and biome:format
+```
 
-### Installation
+### Environment
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/forbiddenlink/plant-therapy.git
-   cd plant-therapy
-   ```
+`.env.example` lists `PERENUAL_API_KEY`, which only the unused `js/perenual.js` reads. The site itself needs no environment variables.
 
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+## Project structure
 
-3. Start the development server:
-   ```bash
-   pnpm start
-   ```
+```
+index.html            # home page
+articles/             # seven article pages
+authors/              # five author pages
+css/                  # theme.css, Tailwind input and built output
+js/perenual.js        # unused Perenual API client
+img/                  # logos, author photos, post images
+tests/                # ui.test.cjs, no-cdn.test.cjs
+tailwind.config.index.cjs   # Tailwind config for index.html
+tailwind.config.inner.cjs   # Tailwind config for articles/ and authors/
+vercel.json           # security headers
+```
 
-4. Open your browser to the URL shown in the terminal (typically `http://localhost:8080`)
+## Deploy
 
-### Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `pnpm start` | Start server and open in browser |
-| `pnpm run serve` | Start server on port 3000 |
-| `pnpm run preview` | Start server with no caching |
-
-## Key Implementation Details
-
-### Tailwind CSS Configuration
-
-Custom theme configuration including:
-- Brand colors: primary (#4A7862), secondary (#39574A), accent (#F0F7F4)
-- Custom animations: fade-in, slide-up
-- Dark mode with class-based toggling
-
-### JavaScript Features
-
-- **Dark Mode Toggle**: Persists preference in localStorage, respects system preference
-- **Form Validation**: Client-side validation with inline error messages
-- **Like System**: Interactive like buttons with visual feedback
-- **Mobile Menu**: Accessible hamburger menu with ARIA support
-
-### Accessibility Compliance
-
-- Skip links for keyboard navigation
-- ARIA labels and roles
-- Focus management
-- Semantic HTML elements
-- Color contrast ratios
-
-## Browser Support
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- iOS Safari 14+
-- Chrome for Android
-
-## Learning Outcomes
-
-This project demonstrates:
-
-1. **Tailwind CSS Mastery** - Utility-first CSS, custom configuration, responsive breakpoints
-2. **Responsive Design** - Mobile-first approach, flexible layouts, responsive images
-3. **Accessibility** - WCAG compliance, ARIA attributes, keyboard navigation
-4. **Modern JavaScript** - ES6+ features, DOM manipulation, event handling
-5. **SEO Best Practices** - Meta tags, structured data, semantic HTML
-6. **Form UX** - Validation, error handling, success feedback
-7. **Dark Mode Implementation** - System preference detection, manual toggle, persistence
-
-## Roadmap
-
-- [ ] Implement backend for form submissions
-- [ ] Add search functionality
-- [ ] Create user authentication
-- [ ] Add comments system
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+The site is static and is hosted on Vercel. There is no build step beyond `pnpm run build:css`, whose output is committed.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Material Design Icons](https://fonts.google.com/icons) for SVG icons
-- Unsplash for placeholder images
-
----
-
-Made with care for plants and mental wellness.
+MIT. See `LICENSE`. Placeholder images come from Unsplash.

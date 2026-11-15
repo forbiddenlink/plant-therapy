@@ -24,7 +24,7 @@ Repo: https://github.com/forbiddenlink/plant-therapy
 - `pnpm test` - UI behavior test plus a check that no page loads the Tailwind CDN
 - `pnpm run biome:check` / `pnpm run biome:fix` / `pnpm run biome:format`
 
-`packageManager` in `package.json` pins `pnpm@10.34.5`, `pnpm-lock.yaml` is the tracked
+`packageManager` in `package.json` pins `pnpm@10.34.9`, `pnpm-lock.yaml` is the tracked
 lockfile, and `.github/workflows/ci.yml` installs via pnpm - all three agree.
 
 ## Layout
