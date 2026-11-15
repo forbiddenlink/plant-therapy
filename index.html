@@ -124,6 +124,14 @@
                 transform: translateY(0);
             }
 
+            @media (prefers-reduced-motion: reduce) {
+                .animate-on-scroll {
+                    opacity: 1;
+                    transform: none;
+                    transition: none;
+                }
+            }
+
             /* Staggered animation delays */
             .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
             .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
@@ -813,14 +821,16 @@
             const darkModeToggle = document.getElementById('darkModeToggle');
             const html = document.documentElement;
 
-            if (localStorage.getItem('darkMode') === 'true' ||
-                (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let savedDarkMode = null;
+            try { savedDarkMode = localStorage.getItem('darkMode'); } catch { /* Storage may be disabled. */ }
+            if (savedDarkMode === 'true' ||
+                (savedDarkMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 html.classList.add('dark');
             }
 
             darkModeToggle.addEventListener('click', () => {
                 html.classList.toggle('dark');
-                localStorage.setItem('darkMode', html.classList.contains('dark'));
+                try { localStorage.setItem('darkMode', html.classList.contains('dark')); } catch { /* Keep the toggle usable without persistence. */ }
             });
 
             // ============================================
@@ -845,6 +855,14 @@
             // ============================================
             // Header Scroll Effect
             // ============================================
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButton.focus();
+                }
+            });
+
             const header = document.getElementById('header');
             let lastScroll = 0;
 
@@ -869,18 +887,21 @@
                 threshold: 0.1
             };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                observer.observe(el);
-            });
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if (typeof IntersectionObserver === 'undefined' ||
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                animatedElements.forEach(el => { el.classList.add('visible'); });
+            } else {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                animatedElements.forEach(el => { observer.observe(el); });
+            }
 
             // ============================================
             // Smooth Scroll for Anchor Links
@@ -899,7 +920,7 @@
 
                         window.scrollTo({
                             top: offsetPosition,
-                            behavior: 'smooth'
+                            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
                         });
                     }
                 });
