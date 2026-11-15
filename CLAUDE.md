@@ -1,14 +1,16 @@
 # Plant Therapy
 
 A static wellness blog about plant care and mental health. Plain HTML5 + Tailwind CSS
-(loaded via CDN script with an inline config in `index.html`, no build step) + vanilla
-JavaScript. No framework, no bundler.
+(prebuilt with the Tailwind v3 CLI into committed `css/tailwind.index.css` and
+`css/tailwind.inner.css`; rerun `pnpm run build:css` after adding or changing utility classes)
++ vanilla JavaScript. No framework, no bundler.
 
 Repo: https://github.com/forbiddenlink/plant-therapy
 
 ## Stack
 
-- HTML5, Tailwind CSS (CDN, `<script src="https://cdn.tailwindcss.com">`), vanilla JS
+- HTML5, Tailwind CSS v3 (CLI build, `tailwind.config.index.cjs` for `index.html`,
+  `tailwind.config.inner.cjs` for `articles/` and `authors/`), vanilla JS
 - `http-server` for local dev serving
 - Node >=14 required (`engines` in package.json); CI runs on Node 22
 - Biome 2.5.11 for lint/format (`biome.json`)
@@ -18,6 +20,8 @@ Repo: https://github.com/forbiddenlink/plant-therapy
 - `pnpm start` - serve and open in browser (`npx http-server . -o`)
 - `pnpm run serve` - serve on port 3000
 - `pnpm run preview` - serve with caching disabled
+- `pnpm run build:css` - regenerate the committed Tailwind CSS files
+- `pnpm test` - UI behavior test plus a check that no page loads the Tailwind CDN
 - `pnpm run biome:check` / `pnpm run biome:fix` / `pnpm run biome:format`
 
 `packageManager` in `package.json` pins `pnpm@10.34.5`, `pnpm-lock.yaml` is the tracked
